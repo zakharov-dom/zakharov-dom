@@ -6412,14 +6412,22 @@
         let currentModalId = null;
 
         function openModal(id) {
-            if (window.prioritizeProjectAssets) { window.prioritizeProjectAssets(id, true); }
-            const modalEl = document.getElementById(id);
-            if (modalEl) {
-                modalEl.querySelectorAll("img[data-src]").forEach(function(img) {
-                    const s = img.getAttribute("data-src");
-                    if (s) { img.src = s; img.removeAttribute("data-src"); img.classList.add("stream-loaded"); }
-                });
-            }
+            try {
+                if (window.prioritizeProjectAssets) { window.prioritizeProjectAssets(id, true); }
+                const modalEl = document.getElementById(id);
+                if (modalEl) {
+                    modalEl.querySelectorAll('img[data-src]').forEach(function(img) {
+                        const s = img.getAttribute('data-src');
+                        if (s) {
+                            img.onload = function() { img.classList.add('stream-loaded'); };
+                            img.onerror = function() { img.classList.add('stream-loaded'); };
+                            img.src = s;
+                            img.removeAttribute('data-src');
+                            if (img.complete && img.naturalWidth > 0) { img.classList.add('stream-loaded'); }
+                        }
+                    });
+                }
+            } catch(e) { console.error('openModal error:', e); }
             currentModalId = id;
             const el = document.getElementById(id);
             if (el) {
@@ -6633,20 +6641,28 @@
 
         // МОДАЛЬНЫЕ ОКНА БАЗЫ ЗНАНИЙ (ЛОНГРИДЫ)
         function openArticleModal(modalId) {
-            const articleEl = document.getElementById(modalId);
-            if (articleEl) {
-                articleEl.querySelectorAll("img[data-src]").forEach(function(img) {
-                    const s = img.getAttribute("data-src");
-                    if (s) { img.src = s; img.removeAttribute("data-src"); img.classList.add("stream-loaded"); }
-                });
-            }
+            try {
+                const articleEl = document.getElementById(modalId);
+                if (articleEl) {
+                    articleEl.querySelectorAll('img[data-src]').forEach(function(img) {
+                        const s = img.getAttribute('data-src');
+                        if (s) {
+                            img.onload = function() { img.classList.add('stream-loaded'); };
+                            img.onerror = function() { img.classList.add('stream-loaded'); };
+                            img.src = s;
+                            img.removeAttribute('data-src');
+                            if (img.complete && img.naturalWidth > 0) { img.classList.add('stream-loaded'); }
+                        }
+                    });
+                }
+            } catch(e) { console.error('openArticleModal error:', e); }
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.style.display = 'block';
                 document.body.classList.add('modal-open');
             }
         }
-
+        
         function closeArticleModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
@@ -6890,23 +6906,37 @@
 
 
     /* ==========================================================================
-       SEQUENTIAL ASSET STREAMING & PRIORITY PRELOAD ENGINE (v1.0)
+       SEQUENTIAL ASSET STREAMING & PRIORITY PRELOAD ENGINE (v1.1)
        Custom Designed for Architect Oleg Zakharov Portfolio
        ========================================================================== */
     (function() {
-        const MAX_CONCURRENT = 2; // Optimal 2 streams: 100% throughput, zero packet choke
+        const MAX_CONCURRENT = 3;
         let activeSlots = 0;
         const loadedUrls = new Set();
         const inFlightUrls = new Set();
         let queue = [];
         let isStarted = false;
 
+        function revealImage(el, url) {
+            el.onload = function() {
+                el.classList.add('stream-loaded');
+            };
+            el.onerror = function() {
+                el.classList.add('stream-loaded');
+            };
+            el.src = url;
+            el.removeAttribute('data-src');
+            if (el.complete && el.naturalWidth > 0) {
+                el.classList.add('stream-loaded');
+            }
+        }
+
         function markImageLoaded(url) {
             loadedUrls.add(url);
-            document.querySelectorAll(img[data-src=" + url + "]).forEach(function(el) {
-                el.src = url;
-                el.removeAttribute('data-src');
-                el.classList.add('stream-loaded');
+            document.querySelectorAll('img[data-src]').forEach(function(el) {
+                if (el.getAttribute('data-src') === url) {
+                    revealImage(el, url);
+                }
             });
         }
 
@@ -6916,13 +6946,13 @@
             // Group 1: Remaining portfolio cards (4 to 14 in grid order)
             document.querySelectorAll('.portfolio-grid .portfolio-card img[data-src]').forEach(function(img) {
                 const s = img.getAttribute('data-src');
-                if (s && !gathered.includes(s)) gathered.push(s);
+                if (s && gathered.indexOf(s) === -1) gathered.push(s);
             });
 
             // Group 2: Services, Process, and Important section images
             document.querySelectorAll('#services img[data-src], #process img[data-src], #important img[data-src]').forEach(function(img) {
                 const s = img.getAttribute('data-src');
-                if (s && !gathered.includes(s)) gathered.push(s);
+                if (s && gathered.indexOf(s) === -1) gathered.push(s);
             });
 
             // Group 3: Modal project galleries in order of interest
@@ -6937,15 +6967,15 @@
                 if (mEl) {
                     mEl.querySelectorAll('img[data-src]').forEach(function(img) {
                         const s = img.getAttribute('data-src');
-                        if (s && !gathered.includes(s)) gathered.push(s);
+                        if (s && gathered.indexOf(s) === -1) gathered.push(s);
                     });
                 }
             });
 
-            // Group 4: Any remaining images with data-src (e.g. articles, viewer)
+            // Group 4: Any remaining images with data-src
             document.querySelectorAll('img[data-src]').forEach(function(img) {
                 const s = img.getAttribute('data-src');
-                if (s && !gathered.includes(s)) gathered.push(s);
+                if (s && gathered.indexOf(s) === -1) gathered.push(s);
             });
 
             queue = gathered;
@@ -6975,7 +7005,7 @@
             };
             img.onerror = function() {
                 inFlightUrls.delete(url);
-                markImageLoaded(url); // Don't block queue
+                markImageLoaded(url);
                 activeSlots = Math.max(0, activeSlots - 1);
                 pumpQueue();
             };
@@ -6990,7 +7020,7 @@
             const urgentUrls = [];
             modal.querySelectorAll('img[data-src]').forEach(function(img) {
                 const s = img.getAttribute('data-src');
-                if (s && !loadedUrls.has(s) && !urgentUrls.includes(s)) {
+                if (s && !loadedUrls.has(s) && urgentUrls.indexOf(s) === -1) {
                     urgentUrls.push(s);
                 }
             });
@@ -6998,10 +7028,12 @@
             if (urgentUrls.length === 0) return;
 
             // Remove from queue and prepend to head
-            queue = queue.filter(function(item) { return !urgentUrls.includes(item); });
-            queue.unshift.apply(queue, urgentUrls);
+            queue = queue.filter(function(item) { return urgentUrls.indexOf(item) === -1; });
+            for (let i = urgentUrls.length - 1; i >= 0; i--) {
+                queue.unshift(urgentUrls[i]);
+            }
 
-            // If immediate boost requested (e.g. card hover or modal open)
+            // If immediate boost requested, fetch top items immediately
             if (forceImmediate) {
                 urgentUrls.slice(0, 3).forEach(function(u) {
                     if (!inFlightUrls.has(u) && !loadedUrls.has(u)) {
@@ -7032,16 +7064,23 @@
             });
         }
 
-        // Viewport IntersectionObserver
+        // Viewport IntersectionObserver: guarantees instant reveal when user scrolls into view
         function wireIntersectionObserver() {
-            if (!('IntersectionObserver' in window)) return;
+            if (!('IntersectionObserver' in window)) {
+                document.querySelectorAll('img[data-src]').forEach(function(img) {
+                    const s = img.getAttribute('data-src');
+                    if (s) revealImage(img, s);
+                });
+                return;
+            }
             const io = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         const img = entry.target;
                         const s = img.getAttribute('data-src');
-                        if (s && !loadedUrls.has(s)) {
-                            // Move to front of queue
+                        if (s) {
+                            revealImage(img, s);
+                            loadedUrls.add(s);
                             const idx = queue.indexOf(s);
                             if (idx > -1) {
                                 queue.splice(idx, 1);
@@ -7052,7 +7091,7 @@
                         io.unobserve(img);
                     }
                 });
-            }, { rootMargin: '300px 0px' });
+            }, { rootMargin: '400px 0px' });
 
             document.querySelectorAll('img[data-src]').forEach(function(img) {
                 io.observe(img);
