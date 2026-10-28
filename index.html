@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- 
     ==========================================================================
     GOLDEN MASTER v18: BALTIC PRESTIGE
@@ -1685,16 +1685,11 @@
                 margin: 4px 0 12px 0;
                 transition: all 0.25s ease;
             }
-            .service-details-toggle:active, .service-details-toggle.open {
-                background: #ede8e3;
-                color: #222;
-            }
-            .service-details-collapse {
+            .service-details-toggle {
                 display: none !important;
             }
-            .service-details-collapse.open {
+            .service-details-collapse {
                 display: block !important;
-                animation: fadeIn 0.3s ease;
             }
             .service-highlights {
                 padding-top: 8px !important;
@@ -3156,8 +3151,146 @@
                 top: 55px;
             }
             .doc-nav-btn {
-                display: none; /* на смартфонах листаем свайпом пальца */
+                display: flex !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: rgba(18, 18, 20, 0.75) !important;
+                border: 1px solid rgba(223, 202, 173, 0.4) !important;
+                color: #ffffff !important;
+                border-radius: 50% !important;
+                align-items: center !important;
+                justify-content: center !important;
+                position: absolute !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                z-index: 2520 !important;
+                font-size: 20px !important;
+                backdrop-filter: blur(6px) !important;
+                -webkit-backdrop-filter: blur(6px) !important;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
             }
+            .doc-nav-prev { left: 8px !important; }
+            .doc-nav-next { right: 8px !important; }
+            .doc-counter { font-size: 0.8rem !important; }
+        }
+
+        /* СТИЛИ МОДАЛЬНОГО ОКНА УСПЕШНОЙ ОТПРАВКИ */
+        .form-success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .form-success-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 12, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .form-success-card {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            max-width: 480px;
+            width: 100%;
+            padding: 40px 30px 30px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            animation: formModalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes formModalIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .form-success-close {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            background: transparent;
+            border: none;
+            font-size: 28px;
+            color: #888;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .form-success-close:hover { color: #111; }
+        .form-success-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(185, 168, 145, 0.16);
+            color: #9c8a73;
+            border: 2px solid #b9a891;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .form-success-title {
+            font-size: 1.35rem;
+            color: #111113;
+            margin: 0 0 12px 0;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .form-success-text {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+            margin: 0 0 25px 0;
+        }
+        .form-success-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .form-success-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+        .form-success-btn--tg {
+            background: #229ed9;
+            color: #ffffff;
+        }
+        .form-success-btn--tg:hover { background: #1c88bd; }
+        .form-success-btn--wa {
+            background: #25d366;
+            color: #ffffff;
+        }
+        .form-success-btn--wa:hover { background: #20b858; }
+        .form-success-dismiss {
+            background: transparent;
+            border: none;
+            color: #888;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .form-success-dismiss:hover { color: #333; }
             .doc-viewer-header {
                 padding: 0 15px;
                 height: 55px;
@@ -4250,7 +4383,7 @@
             <!-- 3. Диалог поколений -->
             <div class="portfolio-card" onclick="openModal('modal-4')">
                 <div class="portfolio-card-media">
-                    <img src="Generated Image October 08, 2026 - 10_56PM.jpg" class="portfolio-card-img" alt="Проект «Диалог поколений»">
+                    <img src="4_1.jpg" class="portfolio-card-img" alt="Проект «Диалог поколений»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Диалог поколений</h3>
                     </div>
@@ -4274,7 +4407,7 @@
             <!-- 5. Единый контур -->
             <div class="portfolio-card" onclick="openModal('modal-1')">
                 <div class="portfolio-card-media">
-                    <img src="Generated Image October 07, 2026 - 9_21PM.jpg" class="portfolio-card-img" alt="Проект «Единый контур»">
+                    <img src="1_1.jpg" class="portfolio-card-img" alt="Проект «Единый контур»">
                     <span class="portfolio-card-badge">
                         <span class="status-dot-green"></span>
                         В реализации
@@ -4308,7 +4441,7 @@
             <!-- 8. Зелёный горизонт -->
             <div class="portfolio-card" onclick="openModal('modal-2')">
                 <div class="portfolio-card-media">
-                    <img src="Generated Image October 06, 2026 - 7_13PM.jpg" class="portfolio-card-img" alt="Проект «Зелёный горизонт»">
+                    <img src="2_1.jpg" class="portfolio-card-img" alt="Проект «Зелёный горизонт»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Зелёный горизонт</h3>
                     </div>
@@ -4338,7 +4471,7 @@
             <!-- 11. Каскад -->
             <div class="portfolio-card" onclick="openModal('modal-5')">
                 <div class="portfolio-card-media">
-                    <img src="Generated Image October 12, 2026 - 9_30PM.jpg" class="portfolio-card-img" alt="Проект «Каскад»">
+                    <img src="5_1.jpg" class="portfolio-card-img" alt="Проект «Каскад»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Каскад</h3>
                     </div>
@@ -4348,7 +4481,7 @@
             <!-- 12. Новая классика -->
             <div class="portfolio-card" onclick="openModal('modal-6')">
                 <div class="portfolio-card-media">
-                    <img src="Generated Image October 13, 2026 - 7_28PM.jpg" class="portfolio-card-img" alt="Проект «Новая классика»">
+                    <img src="6_1.jpg" class="portfolio-card-img" alt="Проект «Новая классика»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Новая классика</h3>
                     </div>
@@ -4879,7 +5012,7 @@
                 <h4>Встреча-консультация с архитектором</h4>
                 <div class="contact-form-sub">Выберите ориентировочные параметры задачи, чтобы встреча прошла максимально предметно:</div>
                 
-                <form action="#" method="POST">
+                <form id="consultationForm" onsubmit="handleFormSubmit(event)">
                     <!-- УДОБНЫЙ ФОРМАТ ДИАЛОГА -->
                     <span class="form-section-label">Удобный формат диалога</span>
                     <div class="chips-group" style="margin-bottom: 20px;">
@@ -4967,13 +5100,13 @@
 
                     <!-- КОНТАКТНЫЕ ДАННЫЕ -->
                     <div class="form-group">
-                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="text" name="client_name" placeholder="Ваше имя" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Телефон для связи" required>
+                        <input type="tel" name="client_phone" placeholder="Телефон для связи" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Район участка / кадастровый номер или пара слов о задаче (опционально)"></textarea>
+                        <textarea name="client_message" placeholder="Район участка / кадастровый номер или пара слов о задаче (опционально)"></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Забронировать время встречи</button>
@@ -5013,11 +5146,11 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="Generated Image October 10, 2026 - 11_00AM.jpg" alt="Вид сверху">
-                <img src="Generated Image October 07, 2026 - 9_21PM.jpg" alt="Главный фасад">
-                <img src="Generated Image October 06, 2026 - 10_20PM.jpg" alt="Терраса">
-                <img src="Generated Image October 06, 2026 - 10_00PM.jpg" alt="Гараж и фасад">
-                <img src="Generated Image October 06, 2026 - 9_25PM.jpg" alt="Подъездная зона">
+                <img src="1_2.jpg" alt="Вид сверху">
+                <img src="1_1.jpg" alt="Главный фасад">
+                <img src="1_3.jpg" alt="Терраса">
+                <img src="1_4.jpg" alt="Гараж и фасад">
+                <img src="1_5.jpg" alt="Подъездная зона">
             </div>
 
             <!-- БЛОК: ХОД РЕАЛИЗАЦИИ НА ОБЪЕКТЕ -->
@@ -5214,9 +5347,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="Generated Image October 06, 2026 - 7_13PM.jpg" alt="Главный фасад с кухней у окна">
-                <img src="Generated Image October 06, 2026 - 8_09PM.jpg" alt="Терраса и вид на второй участок">
-                <img src="Generated Image October 06, 2026 - 7_35PM.jpg" alt="Въездная зона и гараж">
+                <img src="2_1.jpg" alt="Главный фасад с кухней у окна">
+                <img src="2_2.jpg" alt="Терраса и вид на второй участок">
+                <img src="2_3.jpg" alt="Въездная зона и гараж">
             </div>
             </div>
         </div>
@@ -5278,9 +5411,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="Generated Image October 08, 2026 - 10_56PM.jpg" alt="Общий вид дома — единый фасад скрывающий две части">
-                <img src="Generated Image October 13, 2026 - 12_27PM.jpg" alt="Входные группы или ракурс подчеркивающий архитектуру кровли">
-                <img src="Generated Image October 13, 2026 - 11_55AM.jpg" alt="Террасы второго этажа основного блока">
+                <img src="4_1.jpg" alt="Общий вид дома — единый фасад скрывающий две части">
+                <img src="4_2.jpg" alt="Входные группы или ракурс подчеркивающий архитектуру кровли">
+                <img src="4_3.jpg" alt="Террасы второго этажа основного блока">
             </div>
             </div>
         </div>
@@ -5310,9 +5443,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="Generated Image October 12, 2026 - 9_30PM.jpg" alt="Каскадная архитектура фасада">
-                <img src="Generated Image October 12, 2026 - 9_48PM.jpg" alt="Просторная южная терраса">
-                <img src="Generated Image October 12, 2026 - 9_59PM.jpg" alt="Выход на террасу из кухни и коридора">
+                <img src="5_1.jpg" alt="Каскадная архитектура фасада">
+                <img src="5_2.jpg" alt="Просторная южная терраса">
+                <img src="5_3.jpg" alt="Выход на террасу из кухни и коридора">
             </div>
             </div>
         </div>
@@ -5342,9 +5475,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="Generated Image October 13, 2026 - 7_28PM.jpg" alt="Главный фасад с высоким трапециевидным окном">
-                <img src="Generated Image October 13, 2026 - 6_41PM.jpg" alt="Терраса (открытая часть и под навесом)">
-                <img src="Generated Image October 13, 2026 - 6_18PM.jpg" alt="Боковой фасад с балконом">
+                <img src="6_1.jpg" alt="Главный фасад с высоким трапециевидным окном">
+                <img src="6_2.jpg" alt="Терраса (открытая часть и под навесом)">
+                <img src="6_3.jpg" alt="Боковой фасад с балконом">
             </div>
             </div>
         </div>
@@ -5837,7 +5970,7 @@
             <div class="project-scroll-gallery">
                 <img src="14_1.jpg" alt="Главный фасад с въездной зоной">
                 <img src="14_4.jpg" alt="Входная группа крупным планом">
-                <img src="14_3.jfif" alt="Задний фасад и терраса">
+                <img src="14_3.jpg" alt="Задний фасад и терраса">
                 <img src="14_2.jpg" alt="Открытая терраса">
             </div>
             </div>
@@ -5955,6 +6088,129 @@
         });
         
         
+        // НАСТРОЙКИ УВЕДОМЛЕНИЙ О ЗАЯВКАХ (DUAL NOTIFICATION: EMAIL + TELEGRAM)
+        const NOTIFICATION_CONFIG = {
+            // 1. Почта архитектора (бесплатная надежная доставка на zakharovdom.art@gmail.com)
+            recipient_email: 'zakharovdom.art@gmail.com',
+            
+            // 2. Телеграм-уведомления (бот в Telegram для звукового оповещения на смартфон)
+            // При желании получать push-сообщения от бота: впишите токен бота и chat_id:
+            telegram_bot_token: '', // например: '7123456789:AAH...'
+            telegram_chat_id: '',   // например: '123456789'
+            
+            // 3. Прямой контакт в Telegram и WhatsApp для диалога
+            telegram_username: 'zakharov_dom',
+            whatsapp_phone: '79770818050'
+        };
+
+        function closeFormSuccessModal() {
+            const modal = document.getElementById('formSuccessModal');
+            if (modal) modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Забронировать время встречи';
+            
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Отправка заявки...';
+            }
+
+            // Сбор данных формы
+            const formData = new FormData(form);
+            const name = (formData.get('client_name') || '').trim();
+            const phone = (formData.get('client_phone') || '').trim();
+            const format = formData.get('meeting_format') || 'Очно в офисе';
+            const area = formData.get('house_area') || 'Не указана';
+            const floors = formData.get('floors') || 'Не указана';
+            const roof = formData.get('roof_type') || 'Не указан';
+            const plot = formData.get('plot_status') || 'Не указан';
+            const message = (formData.get('client_message') || '').trim();
+
+            const payload = {
+                _subject: '🏛️ Новая заявка на проект: ' + name + ' (' + phone + ')',
+                _template: 'table',
+                _captcha: 'false',
+                'Имя заказчика': name,
+                'Телефон': phone,
+                'Формат диалога': format,
+                'Ориентировочная площадь': area,
+                'Этажность': floors,
+                'Тип кровли': roof,
+                'Ситуация с участком': plot,
+                'Комментарий / кадастр': message || 'Без комментария'
+            };
+
+            // 1. Отправка на Email (FormSubmit)
+            try {
+                fetch('https://formsubmit.co/ajax/' + NOTIFICATION_CONFIG.recipient_email, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                }).catch(function(err) { console.log('Email send error:', err); });
+            } catch (e) {
+                console.log('FormSubmit exception:', e);
+            }
+
+            // 2. Отправка в Telegram бота (если указан токен)
+            if (NOTIFICATION_CONFIG.telegram_bot_token && NOTIFICATION_CONFIG.telegram_chat_id) {
+                const tgText = '🏛 <b>НОВАЯ ЗАЯВКА С САЙТА zakharov-dom.ru</b>\n\n' +
+                               '👤 <b>Имя:</b> ' + name + '\n' +
+                               '📞 <b>Телефон:</b> ' + phone + '\n' +
+                               '🤝 <b>Формат:</b> ' + format + '\n' +
+                               '🏡 <b>Параметры:</b> ' + area + ', ' + floors + ', ' + roof + '\n' +
+                               '📍 <b>Участок:</b> ' + plot + '\n' +
+                               (message ? ('💬 <b>Комментарий:</b> ' + message + '\n') : '');
+
+                try {
+                    fetch('https://api.telegram.org/bot' + NOTIFICATION_CONFIG.telegram_bot_token + '/sendMessage', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            chat_id: NOTIFICATION_CONFIG.telegram_chat_id,
+                            text: tgText,
+                            parse_mode: 'HTML'
+                        })
+                    }).catch(function(err) { console.log('Telegram send error:', err); });
+                } catch (e) {
+                    console.log('Telegram exception:', e);
+                }
+            }
+
+            // 3. Подготовка ссылки для быстрого перехода в мессенджеры
+            const directMsg = 'Здравствуйте, Олег! Я отправил заявку с сайта zakharov-dom.ru:\n' +
+                              'Меня зовут ' + name + ', тел. ' + phone + '.\n' +
+                              'Формат: ' + format + '. Дом: ' + area + ', ' + floors + '.\n' +
+                              (message ? ('Комментарий: ' + message) : '');
+            const tgLink = 'https://t.me/' + NOTIFICATION_CONFIG.telegram_username + '?text=' + encodeURIComponent(directMsg);
+            const waLink = 'https://wa.me/' + NOTIFICATION_CONFIG.whatsapp_phone + '?text=' + encodeURIComponent(directMsg);
+
+            const tgBtn = document.getElementById('successTelegramBtn');
+            if (tgBtn) tgBtn.href = tgLink;
+            const waBtn = document.getElementById('successWhatsappBtn');
+            if (waBtn) waBtn.href = waLink;
+
+            // 4. Показ модального окна успеха
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+            form.reset();
+
+            const successModal = document.getElementById('formSuccessModal');
+            if (successModal) {
+                successModal.style.display = 'flex';
+                document.body.classList.add('modal-open');
+            }
+        }
+
         // НАСТРОЙКИ ДВУХ АЛЬБОМОВ ПРОЕКТОВ
         const ALBUM_CONFIG = {
             concept: {
@@ -5978,21 +6234,39 @@
             const config = ALBUM_CONFIG[currentAlbumKey];
             const numStr = String(currentSheetIndex).padStart(2, '0');
             const imgEl = document.getElementById('docSheetImg');
-            imgEl.src = config.folder + config.prefix + numStr + '.jpg';
-            document.getElementById('docViewerTitle').textContent = config.title;
-            document.getElementById('docCounter').textContent = 'Лист ' + currentSheetIndex + ' из ' + config.totalSheets;
+            if (imgEl) {
+                imgEl.src = config.folder + config.prefix + numStr + '.jpg';
+            }
+            const titleEl = document.getElementById('docViewerTitle');
+            if (titleEl) titleEl.textContent = config.title;
+            const counterEl = document.getElementById('docCounter');
+            if (counterEl) counterEl.textContent = 'Лист ' + currentSheetIndex + ' из ' + config.totalSheets;
+
+            // Фоновая предзагрузка соседних листов для мгновенного перелистывания
+            if (currentSheetIndex < config.totalSheets) {
+                const nextNumStr = String(currentSheetIndex + 1).padStart(2, '0');
+                const preloadNext = new Image();
+                preloadNext.src = config.folder + config.prefix + nextNumStr + '.jpg';
+            }
+            if (currentSheetIndex > 1) {
+                const prevNumStr = String(currentSheetIndex - 1).padStart(2, '0');
+                const preloadPrev = new Image();
+                preloadPrev.src = config.folder + config.prefix + prevNumStr + '.jpg';
+            }
         }
 
         function openDocViewer(albumKey, sheetIndex) {
             currentAlbumKey = albumKey || 'working';
             currentSheetIndex = sheetIndex || 1;
             updateDocViewer();
-            document.getElementById('docViewer').style.display = 'block';
+            const viewer = document.getElementById('docViewer');
+            if (viewer) viewer.style.display = 'block';
             document.body.classList.add('modal-open');
         }
 
         function closeDocViewer() {
-            document.getElementById('docViewer').style.display = 'none';
+            const viewer = document.getElementById('docViewer');
+            if (viewer) viewer.style.display = 'none';
             document.body.classList.remove('modal-open');
         }
 
@@ -6030,33 +6304,44 @@
             }
         });
 
-        // СВАЙПЫ ПАЛЬЦЕМ НА МОБИЛЬНЫХ УСТРОЙСТВАХ
-        let touchStartX = 0;
-        let touchEndX = 0;
+        // СВАЙПЫ И ТАПЫ ПАЛЬЦЕМ НА МОБИЛЬНЫХ УСТРОЙСТВАХ
+        let docTouchStartX = 0;
+        let docTouchEndX = 0;
+        let docTouchStartTime = 0;
 
         document.addEventListener('DOMContentLoaded', function() {
             const stage = document.getElementById('docStage');
             if (stage) {
                 stage.addEventListener('touchstart', function(e) {
-                    touchStartX = e.changedTouches[0].screenX;
+                    docTouchStartX = e.changedTouches[0].clientX;
+                    docTouchStartTime = Date.now();
                 }, { passive: true });
 
                 stage.addEventListener('touchend', function(e) {
-                    touchEndX = e.changedTouches[0].screenX;
-                    handleSwipe();
+                    docTouchEndX = e.changedTouches[0].clientX;
+                    const diffX = docTouchEndX - docTouchStartX;
+                    const diffTime = Date.now() - docTouchStartTime;
+
+                    // Свайп влево/вправо
+                    if (Math.abs(diffX) > 40) {
+                        if (diffX < 0) {
+                            nextDocSheet();
+                        } else {
+                            prevDocSheet();
+                        }
+                    } else if (diffTime < 350) {
+                        // Быстрый тап по правой или левой половине экрана
+                        const rect = stage.getBoundingClientRect();
+                        const tapX = docTouchEndX - rect.left;
+                        if (tapX > rect.width * 0.5) {
+                            nextDocSheet();
+                        } else {
+                            prevDocSheet();
+                        }
+                    }
                 }, { passive: true });
             }
         });
-
-        function handleSwipe() {
-            const swipeThreshold = 45;
-            if (touchEndX < touchStartX - swipeThreshold) {
-                nextDocSheet();
-            }
-            if (touchEndX > touchStartX + swipeThreshold) {
-                prevDocSheet();
-            }
-        }
         
         const PROJECT_MODAL_LIST = [
             'modal-10', 'modal-7', 'modal-4', 'modal-11', 
@@ -6547,7 +6832,7 @@
 
         <div id="docStage" class="doc-viewer-stage">
             <div class="doc-sheet-container" id="docSheetContainer">
-                <img id="docSheetImg" class="doc-sheet-img" src="project_sample/sheet_01.jpg" alt="Лист проекта">
+                <img id="docSheetImg" class="doc-sheet-img" src="concept_sample/concept_01.jpg" alt="Лист проекта">
                 <div class="doc-watermark-layer">
                     <span class="doc-watermark-text">Архитектор Олег Захаров • Демонстрационный альбом</span>
                 </div>
@@ -6670,6 +6955,28 @@
         </div>
 
         <button id="lightboxNextBtn" class="lightbox-nav-btn lightbox-next" onclick="lightboxNext(event)" title="Следующее фото (→)">&#10095;</button>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО УСПЕШНОЙ ОТПРАВКИ ЗАЯВКИ -->
+    <div id="formSuccessModal" class="form-success-modal" style="display: none;">
+        <div class="form-success-overlay" onclick="closeFormSuccessModal()"></div>
+        <div class="form-success-card">
+            <button type="button" class="form-success-close" onclick="closeFormSuccessModal()">&times;</button>
+            <div class="form-success-icon">✓</div>
+            <h3 class="form-success-title">Заявка успешно отправлена!</h3>
+            <p class="form-success-text">Олег Захаров получил ваши данные и свяжется с вами для согласования удобного времени консультации.</p>
+            <div class="form-success-actions">
+                <a id="successTelegramBtn" href="https://t.me/zakharov_dom" target="_blank" class="form-success-btn form-success-btn--tg">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    <span>Открыть диалог в Telegram</span>
+                </a>
+                <a id="successWhatsappBtn" href="https://wa.me/79770818050" target="_blank" class="form-success-btn form-success-btn--wa">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    <span>Написать в WhatsApp</span>
+                </a>
+            </div>
+            <button type="button" class="form-success-dismiss" onclick="closeFormSuccessModal()">Вернуться на сайт</button>
+        </div>
     </div>
 
 </body>
