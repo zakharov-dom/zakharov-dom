@@ -6211,17 +6211,19 @@
             }
         }
 
-        // НАСТРОЙКИ ДВУХ АЛЬБОМОВ ПРОЕКТОВ
+        // НАСТРОЙКИ ДВУХ АЛЬБОМОВ ПРОЕКТОВ (ПОДДЕРЖКА ЗАГРУЗКИ КАК В КОРЕНЬ, ТАК И В ПАПКИ)
         const ALBUM_CONFIG = {
             concept: {
                 title: 'Архитектурный проект (Альбом АР)',
-                folder: 'concept_sample/',
+                folder: '',
+                subfolder: 'concept_sample/',
                 prefix: 'concept_',
                 totalSheets: 25 // 25 листов концептуального альбома (обложка + 24 листа)
             },
             working: {
                 title: 'Архитектурно-строительный проект (Разделы АР + КР)',
-                folder: 'working_sample/',
+                folder: '',
+                subfolder: 'working_sample/',
                 prefix: 'work_',
                 totalSheets: 54 // 54 листа чистого рабочего альбома АР + КР
             }
@@ -6235,7 +6237,15 @@
             const numStr = String(currentSheetIndex).padStart(2, '0');
             const imgEl = document.getElementById('docSheetImg');
             if (imgEl) {
-                imgEl.src = config.folder + config.prefix + numStr + '.jpg';
+                // Сначала ищем в корне репозитория (куда загружены файлы)
+                imgEl.src = config.prefix + numStr + '.jpg';
+                imgEl.onerror = function() {
+                    // Резервный поиск в подпапке, если структура изменится
+                    if (!this.dataset.fallbackTried) {
+                        this.dataset.fallbackTried = '1';
+                        this.src = config.subfolder + config.prefix + numStr + '.jpg';
+                    }
+                };
             }
             const titleEl = document.getElementById('docViewerTitle');
             if (titleEl) titleEl.textContent = config.title;
@@ -6246,12 +6256,12 @@
             if (currentSheetIndex < config.totalSheets) {
                 const nextNumStr = String(currentSheetIndex + 1).padStart(2, '0');
                 const preloadNext = new Image();
-                preloadNext.src = config.folder + config.prefix + nextNumStr + '.jpg';
+                preloadNext.src = config.prefix + nextNumStr + '.jpg';
             }
             if (currentSheetIndex > 1) {
                 const prevNumStr = String(currentSheetIndex - 1).padStart(2, '0');
                 const preloadPrev = new Image();
-                preloadPrev.src = config.folder + config.prefix + prevNumStr + '.jpg';
+                preloadPrev.src = config.prefix + prevNumStr + '.jpg';
             }
         }
 
@@ -6832,7 +6842,7 @@
 
         <div id="docStage" class="doc-viewer-stage">
             <div class="doc-sheet-container" id="docSheetContainer">
-                <img id="docSheetImg" class="doc-sheet-img" src="concept_sample/concept_01.jpg" alt="Лист проекта">
+                <img id="docSheetImg" class="doc-sheet-img" src="concept_01.jpg" alt="Лист проекта">
                 <div class="doc-watermark-layer">
                     <span class="doc-watermark-text">Архитектор Олег Захаров • Демонстрационный альбом</span>
                 </div>
