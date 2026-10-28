@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- 
     ==========================================================================
     GOLDEN MASTER v18: BALTIC PRESTIGE
@@ -75,6 +75,34 @@
       ]
     }
     </script>
+
+    <!-- Microsoft Clarity Analytics (Session Recording & Heatmaps) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "z4t0uepfun");
+    </script>
+
+    <!-- Yandex.Metrika counter (Webvisor & Analytics) -->
+    <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(113847237, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/113847237" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <link rel="preload" as="image" href="hero_mobile_v6_opt.jpg" media="(max-width: 768px)">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -4238,6 +4266,23 @@
             }
         }
 
+
+        /* ==========================================================================
+           SEQUENTIAL ASSET STREAMING & PRELOAD PIPELINE STYLES
+           ========================================================================== */
+        img.lazy-stream {
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        img.lazy-stream.stream-loaded {
+            opacity: 1 !important;
+        }
+        .portfolio-card-media {
+            background: #14171a radial-gradient(circle at 50% 50%, #1e2227 0%, #111215 100%);
+        }
+        .realization-img-box {
+            background: #14171a radial-gradient(circle at 50% 50%, #1c1f24 0%, #101114 100%);
+        }
 </style>
 </head>
 <body>
@@ -4393,7 +4438,7 @@
             <!-- 4. Южный акцент (Флагман концепта) -->
             <div class="portfolio-card" onclick="openModal('modal-11')">
                 <div class="portfolio-card-media">
-                    <img src="11_1.jpg" class="portfolio-card-img" alt="Проект «Южный акцент»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="11_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Южный акцент»">
                     <span class="portfolio-card-badge">
                         <span class="status-dot-green"></span>
                         В реализации
@@ -4407,7 +4452,7 @@
             <!-- 5. Единый контур -->
             <div class="portfolio-card" onclick="openModal('modal-1')">
                 <div class="portfolio-card-media">
-                    <img src="1_1.jpg" class="portfolio-card-img" alt="Проект «Единый контур»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="1_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Единый контур»">
                     <span class="portfolio-card-badge">
                         <span class="status-dot-green"></span>
                         В реализации
@@ -4421,7 +4466,7 @@
             <!-- 6. Дом в заповедной зоне -->
             <div class="portfolio-card" onclick="openModal('modal-3')">
                 <div class="portfolio-card-media">
-                    <img src="3_1.jpg" class="portfolio-card-img" alt="Дом в заповедной зоне">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="3_1.jpg"  class="portfolio-card-img lazy-stream" alt="Дом в заповедной зоне">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Дом в заповедной зоне</h3>
                     </div>
@@ -4431,7 +4476,7 @@
             <!-- 7. Доминанта -->
             <div class="portfolio-card" onclick="openModal('modal-12')">
                 <div class="portfolio-card-media">
-                    <img src="12_1.jpg" class="portfolio-card-img" alt="Проект «Доминанта»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="12_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Доминанта»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Доминанта</h3>
                     </div>
@@ -4441,7 +4486,7 @@
             <!-- 8. Зелёный горизонт -->
             <div class="portfolio-card" onclick="openModal('modal-2')">
                 <div class="portfolio-card-media">
-                    <img src="2_1.jpg" class="portfolio-card-img" alt="Проект «Зелёный горизонт»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="2_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Зелёный горизонт»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Зелёный горизонт</h3>
                     </div>
@@ -4451,7 +4496,7 @@
             <!-- 9. Интеграция -->
             <div class="portfolio-card" onclick="openModal('modal-8')">
                 <div class="portfolio-card-media">
-                    <img src="8_1.jpg" class="portfolio-card-img" alt="Проект «Интеграция»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="8_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Интеграция»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Интеграция</h3>
                     </div>
@@ -4461,7 +4506,7 @@
             <!-- 10. Связь времён (Флагман рабочего альбома) -->
             <div class="portfolio-card" onclick="openModal('modal-14')">
                 <div class="portfolio-card-media">
-                    <img src="14_1.jpg" class="portfolio-card-img" alt="Проект «Связь времён»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="14_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Связь времён»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Связь времён</h3>
                     </div>
@@ -4471,7 +4516,7 @@
             <!-- 11. Каскад -->
             <div class="portfolio-card" onclick="openModal('modal-5')">
                 <div class="portfolio-card-media">
-                    <img src="5_1.jpg" class="portfolio-card-img" alt="Проект «Каскад»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="5_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Каскад»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Каскад</h3>
                     </div>
@@ -4481,7 +4526,7 @@
             <!-- 12. Новая классика -->
             <div class="portfolio-card" onclick="openModal('modal-6')">
                 <div class="portfolio-card-media">
-                    <img src="6_1.jpg" class="portfolio-card-img" alt="Проект «Новая классика»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="6_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Новая классика»">
                     <div class="portfolio-card-glass">
                         <h3 class="portfolio-card-name">Новая классика</h3>
                     </div>
@@ -4491,7 +4536,7 @@
             <!-- 13. Семейная усадьба -->
             <div class="portfolio-card" onclick="openModal('modal-9')">
                 <div class="portfolio-card-media">
-                    <img src="9_1.jpg" class="portfolio-card-img" alt="Проект «Семейная усадьба»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="9_1.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Семейная усадьба»">
                     <span class="portfolio-card-badge">
                         <span class="status-dot-green"></span>
                         В реализации
@@ -4505,7 +4550,7 @@
             <!-- 14. Клубные апартаменты -->
             <div class="portfolio-card" onclick="openModal('modal-13')">
                 <div class="portfolio-card-media">
-                    <img src="13_2.jpg" class="portfolio-card-img" alt="Проект «Клубные апартаменты»">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="13_2.jpg"  class="portfolio-card-img lazy-stream" alt="Проект «Клубные апартаменты»">
                     <span class="portfolio-card-badge">
                         <span class="status-dot-green"></span>
                         В реализации
@@ -4531,7 +4576,7 @@
             <div class="service-card">
                 <div>
                     <div class="service-media-thumb" onclick="openDocViewer('concept')" title="Нажмите, чтобы открыть архитектурный альбом">
-                        <img src="service_concept.jpg" alt="Архитектурный проект и 3D визуализация">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="service_concept.jpg" class="lazy-stream" alt="Архитектурный проект и 3D визуализация">
                     </div>
                     <div class="service-card-top">
                         <div class="service-card-meta">
@@ -4576,7 +4621,7 @@
             <div class="service-card">
                 <div>
                     <div class="service-media-thumb" onclick="openDocViewer('working')" title="Нажмите, чтобы открыть строительный рабочий альбом">
-                        <img src="service_constructive_2.jpg" alt="Архитектурно-строительный проект АР + КР">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="service_constructive_2.jpg" class="lazy-stream" alt="Архитектурно-строительный проект АР + КР">
                     </div>
                     <div class="service-card-top">
                         <div class="service-card-meta">
@@ -4621,7 +4666,7 @@
             <div class="service-card">
                 <div>
                     <div class="service-media-thumb" onclick="location.href='#contact'" title="Перейти к согласованию авторского надзора">
-                        <img src="step_08.jpg" alt="Авторский надзор на стройплощадке">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_08.jpg" class="lazy-stream" alt="Авторский надзор на стройплощадке">
                     </div>
                     <div class="service-card-top">
                         <div class="service-card-meta">
@@ -4727,7 +4772,7 @@
                 </div>
                 <div class="design-card-visual">
                     <div class="design-visual-media">
-                        <img src="step_01.jpg" alt="Знакомство и образ жизни семьи" class="design-visual-img">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_01.jpg"  alt="Знакомство и образ жизни семьи" class="design-visual-img lazy-stream">
                     </div>
                     <div class="design-visual-quote-box">
                         <div class="design-visual-quote">«Настоящий дом начинается не со стен, а с диалога о том, как вы хотите проживать каждое утро и вечер своей жизни.»</div>
@@ -4749,7 +4794,7 @@
                 </div>
                 <div class="design-card-visual">
                     <div class="design-visual-media">
-                        <img src="step_02.jpg" alt="Анализ участка и ГПЗУ" class="design-visual-img">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_02.jpg"  alt="Анализ участка и ГПЗУ" class="design-visual-img lazy-stream">
                     </div>
                     <div class="design-visual-quote-box">
                         <div class="design-visual-quote">«Ошибку в планировке можно скорректировать перегородкой, ошибку в посадке дома на участке исправить невозможно.»</div>
@@ -4771,7 +4816,7 @@
                 </div>
                 <div class="design-card-visual">
                     <div class="design-visual-media">
-                        <img src="step_03.jpg" alt="Архитектурный бриф и ТЗ" class="design-visual-img">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_03.jpg"  alt="Архитектурный бриф и ТЗ" class="design-visual-img lazy-stream">
                     </div>
                     <div class="design-visual-quote-box">
                         <div class="design-visual-quote">«Четкое техническое задание экономит недели согласований и гарантирует, что результат совпадет с ожиданиями.»</div>
@@ -4793,7 +4838,7 @@
                 </div>
                 <div class="design-card-visual">
                     <div class="design-visual-media">
-                        <img src="step_04.jpg" alt="Планировка и эргономика" class="design-visual-img">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_04.jpg"  alt="Планировка и эргономика" class="design-visual-img lazy-stream">
                     </div>
                     <div class="design-visual-quote-box">
                         <div class="design-visual-quote">«Комфортный дом — это когда вы интуитивно делаете минимум шагов для любого повседневного действия.»</div>
@@ -4815,7 +4860,7 @@
                 </div>
                 <div class="design-card-visual">
                     <div class="design-visual-media">
-                        <img src="step_05.jpg" alt="3D-моделирование и фасады" class="design-visual-img">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_05.jpg"  alt="3D-моделирование и фасады" class="design-visual-img lazy-stream">
                     </div>
                     <div class="design-visual-quote-box">
                         <div class="design-visual-quote">«3D-модель дает ясную картину: вы точно видите объем дома, игру света на фасадах и реальные материалы еще до начала стройки.»</div>
@@ -4837,7 +4882,7 @@
                 </div>
                 <div class="design-card-visual">
                     <div class="design-visual-media">
-                        <img src="step_06.jpg" alt="Конструктивный раздел АР и КР" class="design-visual-img">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_06.jpg"  alt="Конструктивный раздел АР и КР" class="design-visual-img lazy-stream">
                     </div>
                     <div class="design-visual-quote-box">
                         <div class="design-visual-quote">«Рабочий проект экономит на стройплощадке в 3–5 раз больше собственной стоимости за счет защиты от перерасхода материалов и переделок.»</div>
@@ -4859,7 +4904,7 @@
                 </div>
                 <div class="design-card-visual">
                     <div class="design-visual-media">
-                        <img src="step_07.jpg" alt="Выдача проекта и авторские пояснения" class="design-visual-img">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_07.jpg"  alt="Выдача проекта и авторские пояснения" class="design-visual-img lazy-stream">
                     </div>
                     <div class="design-visual-quote-box">
                         <div class="design-visual-quote">«Понимание своего проекта дает заказчику главное — уверенность и спокойствие в каждом вложенном рубле.»</div>
@@ -4881,7 +4926,7 @@
                 </div>
                 <div class="design-card-visual">
                     <div class="design-visual-media">
-                        <img src="step_08.jpg" alt="Авторское сопровождение и стройка" class="design-visual-img">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="step_08.jpg"  alt="Авторское сопровождение и стройка" class="design-visual-img lazy-stream">
                     </div>
                     <div class="design-visual-quote-box">
                         <div class="design-visual-quote">«Хороший проект защищает дом в теории, авторский надзор защищает его на реальной стройплощадке.»</div>
@@ -4904,7 +4949,7 @@
             <!-- КАРТОЧКА 1: ДОМ ПОД ОБРАЗ ЖИЗНИ СЕМЬИ (ФЛАГМАН) -->
             <div class="expertise-card featured-article" onclick="openArticleModal('article-lifestyle')">
                 <div class="expertise-media-thumb">
-                    <img src="important_lifestyle.jpg" alt="Дом под образ жизни семьи" loading="lazy">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="important_lifestyle.jpg" class="lazy-stream" alt="Дом под образ жизни семьи">
                 </div>
                 <span class="expertise-tag">Философия • Сценарии жизни</span>
                 <h3>Дом под образ жизни семьи</h3>
@@ -4914,7 +4959,7 @@
             <!-- КАРТОЧКА 2: ГПЗУ, ТОПОСЪЁМКА И ГЕОЛОГИЯ -->
             <div class="expertise-card" onclick="openArticleModal('article-geodesy')">
                 <div class="expertise-media-thumb">
-                    <img src="important_geodesy.jpg" alt="ГПЗУ, топосъёмка и геология" loading="lazy">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="important_geodesy.jpg" class="lazy-stream" alt="ГПЗУ, топосъёмка и геология">
                 </div>
                 <span class="expertise-tag">Старт проекта • Участок</span>
                 <h3>ГПЗУ, топосъёмка и геология</h3>
@@ -4924,7 +4969,7 @@
             <!-- КАРТОЧКА 3: РАЗРЕШЕНИЯ И ВВОД В ЭКСПЛУАТАЦИЮ -->
             <div class="expertise-card" onclick="openArticleModal('article-legal')">
                 <div class="expertise-media-thumb">
-                    <img src="important_legal.jpg" alt="Разрешения и ввод в эксплуатацию" loading="lazy">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="important_legal.jpg" class="lazy-stream" alt="Разрешения и ввод в эксплуатацию">
                 </div>
                 <span class="expertise-tag">Регламенты • Кадастр</span>
                 <h3>Разрешения и ввод в эксплуатацию</h3>
@@ -5146,11 +5191,11 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="1_2.jpg" alt="Вид сверху">
-                <img src="1_1.jpg" alt="Главный фасад">
-                <img src="1_3.jpg" alt="Терраса">
-                <img src="1_4.jpg" alt="Гараж и фасад">
-                <img src="1_5.jpg" alt="Подъездная зона">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="1_2.jpg" class="lazy-stream" alt="Вид сверху">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="1_1.jpg" class="lazy-stream" alt="Главный фасад">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="1_3.jpg" class="lazy-stream" alt="Терраса">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="1_4.jpg" class="lazy-stream" alt="Гараж и фасад">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="1_5.jpg" class="lazy-stream" alt="Подъездная зона">
             </div>
 
             <!-- БЛОК: ХОД РЕАЛИЗАЦИИ НА ОБЪЕКТЕ -->
@@ -5164,7 +5209,7 @@
                     <div class="realization-photos-track">
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_07.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_07.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5178,7 +5223,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_11.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_11.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5192,7 +5237,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_08.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_08.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5206,7 +5251,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_05.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_05.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5220,7 +5265,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_09.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_09.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5234,7 +5279,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_06.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_06.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5248,7 +5293,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_01.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_01.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5262,7 +5307,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_03.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_03.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5276,7 +5321,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_02.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_02.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5290,7 +5335,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_10.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_10.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5304,7 +5349,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="kumachevo_realization_04.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="kumachevo_realization_04.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5347,9 +5392,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="2_1.jpg" alt="Главный фасад с кухней у окна">
-                <img src="2_2.jpg" alt="Терраса и вид на второй участок">
-                <img src="2_3.jpg" alt="Въездная зона и гараж">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="2_1.jpg" class="lazy-stream" alt="Главный фасад с кухней у окна">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="2_2.jpg" class="lazy-stream" alt="Терраса и вид на второй участок">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="2_3.jpg" class="lazy-stream" alt="Въездная зона и гараж">
             </div>
             </div>
         </div>
@@ -5378,10 +5423,10 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="3_1.jpg" alt="Дом в заповедной зоне - Главный фасад">
-                <img src="3_2.jpg" alt="Дом в заповедной зоне - Въездная группа">
-                <img src="3_3.jpg" alt="Дом в заповедной зоне - Ракурс с ландшафтом">
-                <img src="3_4.jpg" alt="Дом в заповедной зоне - Вид со стороны сада">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="3_1.jpg" class="lazy-stream" alt="Дом в заповедной зоне - Главный фасад">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="3_2.jpg" class="lazy-stream" alt="Дом в заповедной зоне - Въездная группа">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="3_3.jpg" class="lazy-stream" alt="Дом в заповедной зоне - Ракурс с ландшафтом">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="3_4.jpg" class="lazy-stream" alt="Дом в заповедной зоне - Вид со стороны сада">
             </div>
             </div>
         </div>
@@ -5411,9 +5456,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="4_1.jpg" alt="Общий вид дома — единый фасад скрывающий две части">
-                <img src="4_2.jpg" alt="Входные группы или ракурс подчеркивающий архитектуру кровли">
-                <img src="4_3.jpg" alt="Террасы второго этажа основного блока">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="4_1.jpg" class="lazy-stream" alt="Общий вид дома — единый фасад скрывающий две части">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="4_2.jpg" class="lazy-stream" alt="Входные группы или ракурс подчеркивающий архитектуру кровли">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="4_3.jpg" class="lazy-stream" alt="Террасы второго этажа основного блока">
             </div>
             </div>
         </div>
@@ -5443,9 +5488,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="5_1.jpg" alt="Каскадная архитектура фасада">
-                <img src="5_2.jpg" alt="Просторная южная терраса">
-                <img src="5_3.jpg" alt="Выход на террасу из кухни и коридора">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="5_1.jpg" class="lazy-stream" alt="Каскадная архитектура фасада">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="5_2.jpg" class="lazy-stream" alt="Просторная южная терраса">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="5_3.jpg" class="lazy-stream" alt="Выход на террасу из кухни и коридора">
             </div>
             </div>
         </div>
@@ -5475,9 +5520,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="6_1.jpg" alt="Главный фасад с высоким трапециевидным окном">
-                <img src="6_2.jpg" alt="Терраса (открытая часть и под навесом)">
-                <img src="6_3.jpg" alt="Боковой фасад с балконом">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="6_1.jpg" class="lazy-stream" alt="Главный фасад с высоким трапециевидным окном">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="6_2.jpg" class="lazy-stream" alt="Терраса (открытая часть и под навесом)">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="6_3.jpg" class="lazy-stream" alt="Боковой фасад с балконом">
             </div>
             </div>
         </div>
@@ -5508,9 +5553,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="7_1.jpg" alt="Открытая галерея - Главный фасад с гаражом">
-                <img src="7_2.jpg" alt="Открытая галерея - Общий вид террасы с колоннами">
-                <img src="7_3.jpg" alt="Открытая галерея - Детальный вид обеденной зоны на террасе">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="7_1.jpg" class="lazy-stream" alt="Открытая галерея - Главный фасад с гаражом">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="7_2.jpg" class="lazy-stream" alt="Открытая галерея - Общий вид террасы с колоннами">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="7_3.jpg" class="lazy-stream" alt="Открытая галерея - Детальный вид обеденной зоны на террасе">
             </div>
 
             <!-- БЛОК: ХОД РЕАЛИЗАЦИИ НА ОБЪЕКТЕ -->
@@ -5524,7 +5569,7 @@
                     <div class="realization-photos-track">
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="avangard_realization_01.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="avangard_realization_01.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5538,7 +5583,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="avangard_realization_02.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="avangard_realization_02.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5552,7 +5597,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="avangard_realization_03.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="avangard_realization_03.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5595,9 +5640,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="8_1.jpg" alt="Проект Интеграция - фото 1">
-                <img src="8_2.jpg" alt="Проект Интеграция - фото 2">
-                <img src="8_3.jpg" alt="Проект Интеграция - фото 3">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="8_1.jpg" class="lazy-stream" alt="Проект Интеграция - фото 1">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="8_2.jpg" class="lazy-stream" alt="Проект Интеграция - фото 2">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="8_3.jpg" class="lazy-stream" alt="Проект Интеграция - фото 3">
             </div>
             </div>
         </div>
@@ -5628,10 +5673,10 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="9_1.jpg" alt="Проект Семейная усадьба - Главный фасад с фонтаном">
-                <img src="9_2.jpg" alt="Проект Семейная усадьба - Боковой ракурс и шаговые дорожки">
-                <img src="9_3.jpg" alt="Проект Семейная усадьба - Парадный вход">
-                <img src="9_4.jpg" alt="Проект Семейная усадьба - Задний двор и озеленение">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="9_1.jpg" class="lazy-stream" alt="Проект Семейная усадьба - Главный фасад с фонтаном">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="9_2.jpg" class="lazy-stream" alt="Проект Семейная усадьба - Боковой ракурс и шаговые дорожки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="9_3.jpg" class="lazy-stream" alt="Проект Семейная усадьба - Парадный вход">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="9_4.jpg" class="lazy-stream" alt="Проект Семейная усадьба - Задний двор и озеленение">
             </div>
 
             <!-- БЛОК: ХОД РЕАЛИЗАЦИИ НА ОБЪЕКТЕ -->
@@ -5645,7 +5690,7 @@
                     <div class="realization-photos-track">
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="moscow_realization_04.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="moscow_realization_04.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5659,7 +5704,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="moscow_realization_01.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="moscow_realization_01.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5673,7 +5718,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="moscow_realization_03.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="moscow_realization_03.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5687,7 +5732,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="moscow_realization_05.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="moscow_realization_05.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5730,9 +5775,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="10_1.jpg" alt="Вилла Грин - Задний фасад и терраса">
-                <img src="10_2.jpg" alt="Вилла Грин - Ракурс с парковкой">
-                <img src="10_3.jpg" alt="Вилла Грин - Главный фасад">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="10_1.jpg" class="lazy-stream" alt="Вилла Грин - Задний фасад и терраса">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="10_2.jpg" class="lazy-stream" alt="Вилла Грин - Ракурс с парковкой">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="10_3.jpg" class="lazy-stream" alt="Вилла Грин - Главный фасад">
             </div>
             </div>
         </div>
@@ -5762,9 +5807,9 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="11_1.jpg" alt="Главный фасад с южной террасой">
-                <img src="11_2.jpg" alt="Ракурс на фальцевую кровлю и витраж">
-                <img src="11_3.jpg" alt="Общий вид участка">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="11_1.jpg" class="lazy-stream" alt="Главный фасад с южной террасой">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="11_2.jpg" class="lazy-stream" alt="Ракурс на фальцевую кровлю и витраж">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="11_3.jpg" class="lazy-stream" alt="Общий вид участка">
             </div>
 
             <!-- БЛОК: ХОД РЕАЛИЗАЦИИ НА ОБЪЕКТЕ -->
@@ -5776,7 +5821,7 @@
                 <div class="realization-photos-grid" style="display: flex; justify-content: center; max-width: 600px; margin: 30px auto 0 auto;">
                     <div class="realization-photo-card" style="width: 100%; max-width: 540px;" onclick="openRealizationLightbox(this)">
                         <div class="realization-img-box" style="aspect-ratio: 16 / 10;">
-                            <img src="malinovka_realization_01.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="malinovka_realization_01.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                             <div class="realization-zoom-hint">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                 <span>Увеличить</span>
@@ -5817,11 +5862,11 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="12_1.jpg" alt="Главный фасад с гаражом на две машины">
-                <img src="12_2.jpg" alt="Фронтальный вид главного фасада">
-                <img src="12_3.jpg" alt="Боковой ракурс с переходом на задний двор">
-                <img src="12_4.jpg" alt="Задний фасад с балконом и большой террасой">
-                <img src="12_5.jpg" alt="Терраса с белыми колоннами">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="12_1.jpg" class="lazy-stream" alt="Главный фасад с гаражом на две машины">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="12_2.jpg" class="lazy-stream" alt="Фронтальный вид главного фасада">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="12_3.jpg" class="lazy-stream" alt="Боковой ракурс с переходом на задний двор">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="12_4.jpg" class="lazy-stream" alt="Задний фасад с балконом и большой террасой">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="12_5.jpg" class="lazy-stream" alt="Терраса с белыми колоннами">
             </div>
             </div>
         </div>
@@ -5851,11 +5896,11 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="13_3.jpg" alt="Главный фасад с баварской кладкой">
-                <img src="13_1.jpg" alt="Общий вид здания с парковкой">
-                <img src="13_5.jpg" alt="Боковой ракурс с ритмом портальных окон">
-                <img src="13_4.jpg" alt="Архитектура плоской кровли и темной штукатурки">
-                <img src="13_2.jpg" alt="Детальный вид входной группы и окон">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="13_3.jpg" class="lazy-stream" alt="Главный фасад с баварской кладкой">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="13_1.jpg" class="lazy-stream" alt="Общий вид здания с парковкой">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="13_5.jpg" class="lazy-stream" alt="Боковой ракурс с ритмом портальных окон">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="13_4.jpg" class="lazy-stream" alt="Архитектура плоской кровли и темной штукатурки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="13_2.jpg" class="lazy-stream" alt="Детальный вид входной группы и окон">
             </div>
 
             <!-- БЛОК: ХОД РЕАЛИЗАЦИИ НА ОБЪЕКТЕ -->
@@ -5869,7 +5914,7 @@
                     <div class="realization-photos-track">
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="hotel_realization_05.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="hotel_realization_05.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5883,7 +5928,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="hotel_realization_01.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="hotel_realization_01.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5897,7 +5942,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="hotel_realization_02.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="hotel_realization_02.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5911,7 +5956,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="hotel_realization_03.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="hotel_realization_03.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5925,7 +5970,7 @@
 
                         <div class="realization-photo-card" onclick="openRealizationLightbox(this)">
                             <div class="realization-img-box">
-                                <img src="hotel_realization_04.jpg" alt="Фото со стройплощадки">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="hotel_realization_04.jpg" class="lazy-stream" alt="Фото со стройплощадки">
                                 <div class="realization-zoom-hint">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                     <span>Увеличить</span>
@@ -5968,10 +6013,10 @@
                 </div>
             </div>
             <div class="project-scroll-gallery">
-                <img src="14_1.jpg" alt="Главный фасад с въездной зоной">
-                <img src="14_4.jpg" alt="Входная группа крупным планом">
-                <img src="14_3.jpg" alt="Задний фасад и терраса">
-                <img src="14_2.jpg" alt="Открытая терраса">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="14_1.jpg" class="lazy-stream" alt="Главный фасад с въездной зоной">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="14_4.jpg" class="lazy-stream" alt="Входная группа крупным планом">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="14_3.jpg" class="lazy-stream" alt="Задний фасад и терраса">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="14_2.jpg" class="lazy-stream" alt="Открытая терраса">
             </div>
             </div>
         </div>
@@ -6204,6 +6249,11 @@
             }
             form.reset();
 
+            // Фиксация успешной заявки в Яндекс Метрике
+            if (typeof ym === 'function') {
+                try { ym(113847237, 'reachGoal', 'lead_submit'); } catch(e) {}
+            }
+
             const successModal = document.getElementById('formSuccessModal');
             if (successModal) {
                 successModal.style.display = 'flex';
@@ -6362,6 +6412,14 @@
         let currentModalId = null;
 
         function openModal(id) {
+            if (window.prioritizeProjectAssets) { window.prioritizeProjectAssets(id, true); }
+            const modalEl = document.getElementById(id);
+            if (modalEl) {
+                modalEl.querySelectorAll("img[data-src]").forEach(function(img) {
+                    const s = img.getAttribute("data-src");
+                    if (s) { img.src = s; img.removeAttribute("data-src"); img.classList.add("stream-loaded"); }
+                });
+            }
             currentModalId = id;
             const el = document.getElementById(id);
             if (el) {
@@ -6575,6 +6633,13 @@
 
         // МОДАЛЬНЫЕ ОКНА БАЗЫ ЗНАНИЙ (ЛОНГРИДЫ)
         function openArticleModal(modalId) {
+            const articleEl = document.getElementById(modalId);
+            if (articleEl) {
+                articleEl.querySelectorAll("img[data-src]").forEach(function(img) {
+                    const s = img.getAttribute("data-src");
+                    if (s) { img.src = s; img.removeAttribute("data-src"); img.classList.add("stream-loaded"); }
+                });
+            }
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.style.display = 'block';
@@ -6615,7 +6680,7 @@
                 const img = card.querySelector('.realization-img-box img');
                 const num = card.querySelector('.realization-step-num');
                 return {
-                    src: img ? img.getAttribute('src') : '',
+                    src: img ? (img.getAttribute("data-src") || img.getAttribute("src")) : "",
                     caption: num ? num.textContent : `Фото ${i + 1}`
                 };
             });
@@ -6754,7 +6819,7 @@
                     
                     currentLightboxImages = allImgs.map(function(item, idx) {
                         return {
-                            src: item.getAttribute('src'),
+                            src: item.getAttribute("data-src") || item.getAttribute("src"),
                             caption: (item.getAttribute('alt') || projTitle) + ` (${idx + 1}/${allImgs.length})`
                         };
                     });
@@ -6823,6 +6888,191 @@
             img.src = "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22600%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20fill%3D%22%23222%22%20width%3D%22600%22%20height%3D%22400%22%2F%3E%3Cpath%20d%3D%22M0%200L600%20400M600%200L0%20400%22%20stroke%3D%22%23333%22%20stroke-width%3D%221%22%2F%3E%3Ctext%20fill%3D%22%23777%22%20font-family%3D%27Inter%2Csans-serif%27%20font-size%3D%2714%27%20letter-spacing%3D%272%27%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%3E%D0%A4%D0%9E%D0%A2%D0%9E%20%D0%A1%D0%A2%D0%A0%D0%9E%D0%98%D0%9A%D0%98%20%D0%9E%D0%91%D0%AA%D0%95%D0%9A%D0%A2%D0%90%3C%2Ftext%3E%3C%2Fsvg%3E";
         }
 
+
+    /* ==========================================================================
+       SEQUENTIAL ASSET STREAMING & PRIORITY PRELOAD ENGINE (v1.0)
+       Custom Designed for Architect Oleg Zakharov Portfolio
+       ========================================================================== */
+    (function() {
+        const MAX_CONCURRENT = 2; // Optimal 2 streams: 100% throughput, zero packet choke
+        let activeSlots = 0;
+        const loadedUrls = new Set();
+        const inFlightUrls = new Set();
+        let queue = [];
+        let isStarted = false;
+
+        function markImageLoaded(url) {
+            loadedUrls.add(url);
+            document.querySelectorAll(img[data-src=" + url + "]).forEach(function(el) {
+                el.src = url;
+                el.removeAttribute('data-src');
+                el.classList.add('stream-loaded');
+            });
+        }
+
+        function buildInitialQueue() {
+            const gathered = [];
+
+            // Group 1: Remaining portfolio cards (4 to 14 in grid order)
+            document.querySelectorAll('.portfolio-grid .portfolio-card img[data-src]').forEach(function(img) {
+                const s = img.getAttribute('data-src');
+                if (s && !gathered.includes(s)) gathered.push(s);
+            });
+
+            // Group 2: Services, Process, and Important section images
+            document.querySelectorAll('#services img[data-src], #process img[data-src], #important img[data-src]').forEach(function(img) {
+                const s = img.getAttribute('data-src');
+                if (s && !gathered.includes(s)) gathered.push(s);
+            });
+
+            // Group 3: Modal project galleries in order of interest
+            const modalOrder = [
+                'modal-10', 'modal-7', 'modal-4', 'modal-11', 
+                'modal-1', 'modal-3', 'modal-12', 'modal-2', 
+                'modal-8', 'modal-14', 'modal-5', 'modal-6', 
+                'modal-9', 'modal-13'
+            ];
+            modalOrder.forEach(function(mid) {
+                const mEl = document.getElementById(mid);
+                if (mEl) {
+                    mEl.querySelectorAll('img[data-src]').forEach(function(img) {
+                        const s = img.getAttribute('data-src');
+                        if (s && !gathered.includes(s)) gathered.push(s);
+                    });
+                }
+            });
+
+            // Group 4: Any remaining images with data-src (e.g. articles, viewer)
+            document.querySelectorAll('img[data-src]').forEach(function(img) {
+                const s = img.getAttribute('data-src');
+                if (s && !gathered.includes(s)) gathered.push(s);
+            });
+
+            queue = gathered;
+            pumpQueue();
+        }
+
+        function pumpQueue() {
+            while (activeSlots < MAX_CONCURRENT && queue.length > 0) {
+                const nextUrl = queue.shift();
+                if (!nextUrl || loadedUrls.has(nextUrl) || inFlightUrls.has(nextUrl)) {
+                    continue;
+                }
+                fetchAsset(nextUrl);
+            }
+        }
+
+        function fetchAsset(url, isUrgent) {
+            inFlightUrls.add(url);
+            activeSlots++;
+
+            const img = new Image();
+            img.onload = function() {
+                inFlightUrls.delete(url);
+                markImageLoaded(url);
+                activeSlots = Math.max(0, activeSlots - 1);
+                pumpQueue();
+            };
+            img.onerror = function() {
+                inFlightUrls.delete(url);
+                markImageLoaded(url); // Don't block queue
+                activeSlots = Math.max(0, activeSlots - 1);
+                pumpQueue();
+            };
+            img.src = url;
+        }
+
+        // Global escalation function
+        window.prioritizeProjectAssets = function(modalId, forceImmediate) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+
+            const urgentUrls = [];
+            modal.querySelectorAll('img[data-src]').forEach(function(img) {
+                const s = img.getAttribute('data-src');
+                if (s && !loadedUrls.has(s) && !urgentUrls.includes(s)) {
+                    urgentUrls.push(s);
+                }
+            });
+
+            if (urgentUrls.length === 0) return;
+
+            // Remove from queue and prepend to head
+            queue = queue.filter(function(item) { return !urgentUrls.includes(item); });
+            queue.unshift.apply(queue, urgentUrls);
+
+            // If immediate boost requested (e.g. card hover or modal open)
+            if (forceImmediate) {
+                urgentUrls.slice(0, 3).forEach(function(u) {
+                    if (!inFlightUrls.has(u) && !loadedUrls.has(u)) {
+                        fetchAsset(u, true);
+                    }
+                });
+            }
+
+            pumpQueue();
+        };
+
+        // Wire hover and mobile touchstart on portfolio cards
+        function wireInteractions() {
+            document.querySelectorAll('.portfolio-card').forEach(function(card) {
+                const oc = card.getAttribute('onclick') || '';
+                const m = oc.match(/openModal\(['"]([^'"]+)['"]\)/);
+                if (m && m[1]) {
+                    const modalId = m[1];
+                    let triggered = false;
+                    const onInteract = function() {
+                        if (triggered) return;
+                        triggered = true;
+                        window.prioritizeProjectAssets(modalId, true);
+                    };
+                    card.addEventListener('mouseenter', onInteract, { once: true, passive: true });
+                    card.addEventListener('touchstart', onInteract, { once: true, passive: true });
+                }
+            });
+        }
+
+        // Viewport IntersectionObserver
+        function wireIntersectionObserver() {
+            if (!('IntersectionObserver' in window)) return;
+            const io = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const s = img.getAttribute('data-src');
+                        if (s && !loadedUrls.has(s)) {
+                            // Move to front of queue
+                            const idx = queue.indexOf(s);
+                            if (idx > -1) {
+                                queue.splice(idx, 1);
+                                queue.unshift(s);
+                                pumpQueue();
+                            }
+                        }
+                        io.unobserve(img);
+                    }
+                });
+            }, { rootMargin: '300px 0px' });
+
+            document.querySelectorAll('img[data-src]').forEach(function(img) {
+                io.observe(img);
+            });
+        }
+
+        function startPipeline() {
+            if (isStarted) return;
+            isStarted = true;
+            buildInitialQueue();
+            wireInteractions();
+            wireIntersectionObserver();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', startPipeline);
+        } else {
+            startPipeline();
+        }
+    })();
     </script>
 
     <!-- FULLSCREEN PROJECT VIEWER (FLIPBOOK) -->
@@ -6842,7 +7092,7 @@
 
         <div id="docStage" class="doc-viewer-stage">
             <div class="doc-sheet-container" id="docSheetContainer">
-                <img id="docSheetImg" class="doc-sheet-img" src="concept_01.jpg" alt="Лист проекта">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="concept_01.jpg"  id="docSheetImg" class="doc-sheet-img lazy-stream" alt="Лист проекта">
                 <div class="doc-watermark-layer">
                     <span class="doc-watermark-text">Архитектор Олег Захаров • Демонстрационный альбом</span>
                 </div>
@@ -6869,7 +7119,7 @@
                 <p>Почему настоящее проектирование начинается не с бетона и фасадов, а с утреннего кофе, привычек близких и личных сценариев каждого дня.</p>
             </div>
             <div class="article-hero-media">
-                <img src="important_lifestyle.jpg" alt="Что значит спроектировать дом под образ жизни семьи">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="important_lifestyle.jpg" class="lazy-stream" alt="Что значит спроектировать дом под образ жизни семьи">
             </div>
             <div style="font-size: 1.05rem; line-height: 1.85; color: #3f3f3f; font-weight: 300;">
                 <div style="padding: 24px 30px; background: #fbf9f6; border-left: 3px solid #b9a891; font-style: italic; font-size: 1.15rem; line-height: 1.7; color: #212121; margin-bottom: 30px; border-radius: 0 4px 4px 0;">
@@ -6909,7 +7159,7 @@
                 <p>Почему профессиональное проектирование всегда начинается с анализа земли, рельефа и градостроительных регламентов.</p>
             </div>
             <div class="article-hero-media">
-                <img src="important_geodesy.jpg" alt="ГПЗУ, топосъёмка и геология">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="important_geodesy.jpg" class="lazy-stream" alt="ГПЗУ, топосъёмка и геология">
             </div>
             <div style="font-size: 1.05rem; line-height: 1.8; color: #444; font-weight: 300;">
                 <p><strong>1. Топографический план (геоподоснова в масштабе 1:500)</strong><br>Это детальный геодезический чертеж участка, на котором зафиксированы точные границы, перепады высот рельефа и все имеющиеся инженерные сети (как наземные, так и скрытые под землей: газ, водопровод, силовые кабели, связь).</p>
@@ -6936,7 +7186,7 @@
                 <p>Пошаговый юридический маршрут для частного жилого дома (ИЖС): от первого уведомления до выписки из ЕГРН.</p>
             </div>
             <div class="article-hero-media">
-                <img src="important_legal.jpg" alt="Разрешительная документация и ввод дома в эксплуатацию">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" data-src="important_legal.jpg" class="lazy-stream" alt="Разрешительная документация и ввод дома в эксплуатацию">
             </div>
             <div style="font-size: 1.05rem; line-height: 1.8; color: #444; font-weight: 300;">
                 <p><strong>1. Уведомление о начале строительства</strong><br>Для индивидуального жилья действует уведомительный порядок. В администрацию муниципалитета подается стандартное Уведомление с приложением СПОЗУ (Схемы планировочной организации земельного участка) из нашего архитектурного проекта. Администрация проверяет отступы и выдает Уведомление о соответствии параметров — законный зеленый свет для начала строительных работ.</p>
