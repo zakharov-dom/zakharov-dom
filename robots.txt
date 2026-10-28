@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zakharov-dom.ru/sitemap.xml
+Host: https://zakharov-dom.ru
