@@ -70,7 +70,7 @@
         "closes": "19:00"
       },
       "sameAs": [
-        "https://t.me/zakharov_dom",
+        "https://wa.me/79770818050",
         "https://max.ru/u/f9LHodD0cOKcHSBvVLlkdRssRtrFBUUOHNg3CJLTA7WfTSXtKFu27dJWAbg"
       ]
     }
@@ -145,13 +145,10 @@
         
         /* КОРРЕКТНЫЙ ОТСТУП ДЛЯ ВСЕХ ЯКОРЕЙ ПРИ ФИКСИРОВАННОЙ ШАПКЕ */
         section, .section, [id] { 
-            scroll-margin-top: 135px; 
+            scroll-margin-top: 103px; 
         }
-        #portfolio { 
-            scroll-margin-top: 140px; 
-        }
-        #manifesto { 
-            scroll-margin-top: 130px; 
+        #portfolio, #services, #process, #important, #about, #contact, #manifesto { 
+            scroll-margin-top: 103px; 
         }
 
         /* ШАПКА САЙТА: ВАРИАНТ 2 - ПАРЯЩАЯ ПРОЗРАЧНАЯ НАД ФОТО С МЯГКИМ ПЕРЕКЛЮЧЕНИЕМ ПРИ СКРОЛЛЕ */
@@ -436,6 +433,15 @@
             text-align: center;
             position: relative;
         }
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
         .intro-manifest .section-label {
             display: inline-block;
             font-size: 0.8rem;
@@ -481,12 +487,12 @@
             font-weight: 500;
         }
 
-        .section { padding: 60px 4% 110px 4%; max-width: 1750px; margin: 0 auto; }
+        .section { padding: 50px 4% 100px 4%; max-width: 1750px; margin: 0 auto; }
         .section-title { 
             font-size: 2.3rem; 
             font-weight: 300; 
             text-align: center; 
-            margin-bottom: 60px; 
+            margin-bottom: 50px; 
             text-transform: uppercase; 
             letter-spacing: 3px; 
             color: var(--color-text);
@@ -646,14 +652,14 @@
 
         /* ABOUT SECTION REDESIGN (MAGAZINE EDITORIAL) */
         .about-section-wrap {
-            padding: 80px 0 60px 0;
+            padding: 50px 0 60px 0;
             border-top: 1px solid var(--color-border-subtle);
             border-bottom: 1px solid var(--color-border-subtle);
         }
         .about-section-header {
             text-align: center;
             max-width: 900px;
-            margin: 0 auto 55px auto;
+            margin: 0 auto 50px auto;
         }
         .about-section-header .section-label {
             display: inline-block;
@@ -1331,7 +1337,16 @@
             .intro-manifest {
                 padding: 35px 14px 28px 14px !important;
             }
-            .intro-manifest .section-label {
+            .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+        .intro-manifest .section-label {
                 font-size: 0.70rem !important;
                 letter-spacing: 2.5px !important;
                 margin-bottom: 10px !important;
@@ -2159,12 +2174,12 @@
             background-color: #ffffff;
             border-top: 1px solid var(--color-border-subtle);
             border-bottom: 1px solid var(--color-border-subtle);
-            padding: 100px 5%;
+            padding: 50px 5% 100px 5%;
         }
         .services-header {
             text-align: center;
             max-width: 900px;
-            margin: 0 auto 55px auto;
+            margin: 0 auto 50px auto;
         }
         .services-header h2 {
             font-size: 2.2rem;
@@ -3310,6 +3325,15 @@
             color: #ffffff;
         }
         .form-success-btn--wa:hover { background: #20b858; }
+        .form-success-btn--max {
+            background: #18181b;
+            color: #ffffff;
+            border: 1px solid #333338;
+        }
+        .form-success-btn--max:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+        }
         .form-success-dismiss {
             background: transparent;
             border: none;
@@ -3345,7 +3369,7 @@
         
         /* PROCESS SECTION: ARCHITECTURAL DESIGN */
         .process-section {
-            padding: 100px 5%;
+            padding: 50px 5% 100px 5%;
             background-color: #ffffff;
             border-top: 1px solid #ebebeb;
             border-bottom: 1px solid #ebebeb;
@@ -3547,14 +3571,14 @@
 
         /* EXPERTISE SECTION: KNOWLEDGE HUB */
         .expertise-section {
-            padding: 100px 5%;
+            padding: 50px 5% 100px 5%;
             background-color: #f7f7f8;
             border-bottom: 1px solid #ebebeb;
         }
         .expertise-header {
             text-align: center;
             max-width: 900px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 50px auto;
         }
         .expertise-header h2 {
             font-size: 2.2rem;
@@ -4358,8 +4382,8 @@
                     <a href="https://wa.me/79770818050" target="_blank" class="mobile-menu-social-btn" title="Написать в WhatsApp" aria-label="WhatsApp">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                     </a>
-                    <a href="https://t.me/zakharov_dom" target="_blank" class="mobile-menu-social-btn" title="Написать в Telegram" aria-label="Telegram">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    <a href="https://max.ru/u/f9LHodD0cOKcHSBvVLlkdRssRtrFBUUOHNg3CJLTA7WfTSXtKFu27dJWAbg" target="_blank" class="mobile-menu-social-btn" title="Связаться в Max" aria-label="Max">
+                        <span style="font-size: 11px; font-weight: 700; letter-spacing: -0.2px;">MAX</span>
                     </a>
                 </div>
                 <a href="#contact" class="mobile-menu-cta-btn" onclick="closeMobileNav()">ОБСУДИТЬ ПРОЕКТ</a>
@@ -5044,7 +5068,6 @@
                     <a href="mailto:zakharovdom.art@gmail.com">zakharovdom.art@gmail.com</a>
                 </div>
                 <div class="messengers">
-                    <a href="https://t.me/zakharov_dom" target="_blank">Telegram</a>
                     <a href="https://wa.me/79770818050" target="_blank">WhatsApp</a>
                     <a href="https://max.ru/u/f9LHodD0cOKcHSBvVLlkdRssRtrFBUUOHNg3CJLTA7WfTSXtKFu27dJWAbg" target="_blank">Max</a>
                 </div>
@@ -5066,8 +5089,8 @@
                             <span class="chip-box">Встреча в офисе (Калининград)</span>
                         </label>
                         <label class="chip-label">
-                            <input type="radio" name="meeting_format" value="Онлайн (Telegram / WhatsApp / Max)">
-                            <span class="chip-box">Онлайн (Telegram / WhatsApp / Max)</span>
+                            <input type="radio" name="meeting_format" value="Онлайн (WhatsApp / Max / Видеосвязь)">
+                            <span class="chip-box">Онлайн (WhatsApp / Max / Видеосвязь)</span>
                         </label>
                     </div>
 
@@ -6234,11 +6257,7 @@
                               'Меня зовут ' + name + ', тел. ' + phone + '.\n' +
                               'Формат: ' + format + '. Дом: ' + area + ', ' + floors + '.\n' +
                               (message ? ('Комментарий: ' + message) : '');
-            const tgLink = 'https://t.me/' + NOTIFICATION_CONFIG.telegram_username + '?text=' + encodeURIComponent(directMsg);
             const waLink = 'https://wa.me/' + NOTIFICATION_CONFIG.whatsapp_phone + '?text=' + encodeURIComponent(directMsg);
-
-            const tgBtn = document.getElementById('successTelegramBtn');
-            if (tgBtn) tgBtn.href = tgLink;
             const waBtn = document.getElementById('successWhatsappBtn');
             if (waBtn) waBtn.href = waLink;
 
@@ -7265,13 +7284,13 @@
             <h3 class="form-success-title">Заявка успешно отправлена!</h3>
             <p class="form-success-text">Олег Захаров получил ваши данные и свяжется с вами для согласования удобного времени консультации.</p>
             <div class="form-success-actions">
-                <a id="successTelegramBtn" href="https://t.me/zakharov_dom" target="_blank" class="form-success-btn form-success-btn--tg">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                    <span>Открыть диалог в Telegram</span>
-                </a>
                 <a id="successWhatsappBtn" href="https://wa.me/79770818050" target="_blank" class="form-success-btn form-success-btn--wa">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                    <span>Написать в WhatsApp</span>
+                    <span>Открыть диалог в WhatsApp</span>
+                </a>
+                <a id="successMaxBtn" href="https://max.ru/u/f9LHodD0cOKcHSBvVLlkdRssRtrFBUUOHNg3CJLTA7WfTSXtKFu27dJWAbg" target="_blank" class="form-success-btn form-success-btn--max">
+                    <span style="font-weight: 700; font-size: 14px; letter-spacing: -0.3px;">MAX</span>
+                    <span>Связаться через Max</span>
                 </a>
             </div>
             <button type="button" class="form-success-dismiss" onclick="closeFormSuccessModal()">Вернуться на сайт</button>
