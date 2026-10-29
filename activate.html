@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Активация доставки заявок | Архитектурное бюро Олега Захарова</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #111113;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .activate-card {
+            background: #1a1a1e;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 8px;
+            padding: 40px 32px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+        .icon {
+            font-size: 36px;
+            color: #c5a059;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 14px;
+            letter-spacing: 0.5px;
+        }
+        p {
+            font-size: 0.92rem;
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .email-badge {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.15);
+            color: #c5a059;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .submit-btn {
+            background: #c5a059;
+            color: #111;
+            border: none;
+            padding: 16px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.25s ease;
+        }
+        .submit-btn:hover {
+            background: #d4b068;
+            transform: translateY(-1px);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #777;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .back-link:hover { color: #aaa; }
+    </style>
+</head>
+<body>
+    <div class="activate-card">
+        <div class="icon">✉</div>
+        <h1>Активация почты FormSubmit</h1>
+        <div class="email-badge">zakharovdom.art@gmail.com</div>
+        <p>Для защиты от спама сервис FormSubmit требует <b>однократного прямого подтверждения</b> через форму браузера. После нажатия кнопки откроется экран сервиса, а на ваш Gmail придет активационное письмо.</p>
+        
+        <form action="https://formsubmit.co/zakharovdom.art@gmail.com" method="POST">
+            <input type="hidden" name="Активация" value="Подтверждение почты для сайта zakharov-dom.ru">
+            <input type="hidden" name="_next" value="https://zakharov-dom.ru">
+            <button type="submit" class="submit-btn">Активировать прием заявок</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Вернуться на сайт</a>
+    </div>
+</body>
+</html>
