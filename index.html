@@ -6155,7 +6155,8 @@
         
         // НАСТРОЙКИ УВЕДОМЛЕНИЙ О ЗАЯВКАХ (DUAL NOTIFICATION: EMAIL + TELEGRAM)
         const NOTIFICATION_CONFIG = {
-            // 1. Почта архитектора (бесплатная надежная доставка на zakharovdom.art@gmail.com)
+            // 1. Официальный ключ Web3Forms (доставка на zakharovdom.art@gmail.com)
+            web3forms_key: 'c37a6612-fba3-4fa5-8ebc-bd60f5b27892',
             recipient_email: 'zakharovdom.art@gmail.com',
             
             // 2. Телеграм-уведомления (бот в Telegram для звукового оповещения на смартфон)
@@ -6197,9 +6198,9 @@
             const message = (formData.get('client_message') || '').trim();
 
             const payload = {
-                _subject: 'Новая заявка на проект: ' + name + ' (' + phone + ')',
-                _template: 'table',
-                _captcha: 'false',
+                access_key: NOTIFICATION_CONFIG.web3forms_key,
+                subject: 'Новая заявка на проект zakharov-dom.ru: ' + name + ' (' + phone + ')',
+                from_name: 'Архитектурное бюро zakharov-dom.ru',
                 'Имя заказчика': name,
                 'Телефон': phone,
                 'Формат диалога': format,
@@ -6212,7 +6213,7 @@
 
             // 1. Отправка на Email (FormSubmit)
             try {
-                fetch('https://formsubmit.co/ajax/' + NOTIFICATION_CONFIG.recipient_email, {
+                fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
