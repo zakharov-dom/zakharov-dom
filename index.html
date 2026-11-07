@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- 
     ==========================================================================
     GOLDEN MASTER v18: BALTIC PRESTIGE
@@ -912,10 +912,29 @@
         .contact-links { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
         .contact-links a { font-size: 1.4rem; color: var(--color-text); text-decoration: none; font-weight: 400; transition: color 0.3s; }
         .contact-links a:hover { color: var(--color-accent); }
-        .messengers { display: flex; gap: 20px; margin-bottom: 40px; }
-        .messengers a { display: inline-block; padding: 12px 25px; border: 1px solid var(--color-accent); border-radius: 30px; color: var(--color-text); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
-        .messengers a:hover { background: var(--color-accent); color: #fff; }
-        .location-note { font-size: 0.95rem; color: #888; line-height: 1.7; padding-top: 30px; border-top: 1px solid var(--color-border-subtle); }
+        .messengers-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #888; margin-bottom: 12px; font-weight: 600; }
+        .messengers { display: flex; gap: 12px; margin-bottom: 35px; }
+        .messengers a { display: inline-flex; align-items: center; justify-content: center; width: 124px; height: 44px; border: 1px solid var(--color-accent); border-radius: 30px; color: var(--color-text); text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: none; letter-spacing: 0.4px; transition: all 0.25s ease; background: #ffffff; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+        .messengers a:hover { background: var(--color-accent); color: #fff; border-color: var(--color-accent-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(185, 168, 145, 0.25); }
+        .location-note { font-size: 0.95rem; color: #888; line-height: 1.7; margin-bottom: 25px; padding-top: 0; border-top: none; }
+        .meeting-badge { display: inline-block; margin-top: 4px; font-size: 0.82rem; color: #888; }
+
+        /* ПОЛОСА АВТОРСКИХ КАНАЛОВ */
+        .channels-strip { background: #f7f5f2; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 24px 60px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+        .channels-meta { display: flex; flex-direction: column; gap: 3px; }
+        .channels-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-accent-hover); font-weight: 600; }
+        .channels-title { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 500; color: var(--color-text); }
+        .channels-desc { font-size: 12px; color: var(--color-text-muted); }
+        .channels-buttons { display: flex; gap: 14px; }
+        .channel-pill-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 34px; min-width: 145px; border: 1px solid var(--color-accent); background: #ffffff; border-radius: 30px; color: var(--color-text); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; transition: all 0.25s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+        .channel-pill-btn:hover { border-color: var(--color-accent-hover); background: #faf8f5; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(185, 168, 145, 0.2); }
+        .channel-pill-btn svg, .channel-pill-btn img { width: 18px; height: 18px; display: block; }
+
+        /* ПРЯМАЯ ССЫЛКА НА ПРОЕКТ */
+        .project-share-bar { margin-top: 14px; display: flex; align-items: center; }
+        .project-share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; font-size: 0.8rem; color: var(--color-text-muted); background: rgba(185, 168, 145, 0.08); border: 1px solid var(--color-border); border-radius: 20px; cursor: pointer; transition: all 0.25s ease; font-family: 'Inter', sans-serif; font-weight: 500; }
+        .project-share-btn:hover { background: #ffffff; border-color: var(--color-accent); color: var(--color-text); transform: translateY(-1px); }
+        .project-share-btn.copied { background: #ECFDF5; border-color: #10B981; color: #059669; }
 
         .contact-form-wrapper { flex: 1; background: #fff; padding: 50px; border-radius: 4px; box-shadow: var(--shadow-card); border: 1px solid var(--color-border-subtle); }
         .contact-form-wrapper h4 { margin: 0 0 30px 0; font-size: 1.4rem; font-weight: 400; color: var(--color-text); }
@@ -2069,6 +2088,10 @@
                 word-break: break-word !important;
                 text-align: center !important;
             }
+            .messengers-title {
+                text-align: center !important;
+                margin-bottom: 8px !important;
+            }
             .messengers {
                 display: flex !important;
                 flex-direction: row !important;
@@ -2076,18 +2099,22 @@
                 align-items: center !important;
                 flex-wrap: nowrap !important;
                 width: 100% !important;
-                max-width: 340px !important;
-                margin: 8px auto 14px auto !important;
+                max-width: 380px !important;
+                margin: 6px auto 18px auto !important;
                 gap: 8px !important;
             }
             .messengers a {
                 flex: 1 1 0 !important;
                 width: auto !important;
                 min-width: 0 !important;
+                height: 40px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
                 text-align: center !important;
-                padding: 8px 6px !important;
-                font-size: 0.74rem !important;
-                letter-spacing: 0.6px !important;
+                padding: 0 4px !important;
+                font-size: 0.78rem !important;
+                letter-spacing: 0.3px !important;
                 white-space: nowrap !important;
                 box-sizing: border-box !important;
                 border-radius: 20px !important;
@@ -2096,6 +2123,7 @@
                 background: #ffffff !important;
                 text-decoration: none !important;
                 font-weight: 500 !important;
+                text-transform: none !important;
                 transition: all 0.25s ease !important;
             }
             .messengers a:active, .messengers a:hover {
@@ -2107,9 +2135,27 @@
                 font-size: 0.80rem !important;
                 color: #666 !important;
                 line-height: 1.5 !important;
-                padding-top: 14px !important;
-                margin-top: 8px !important;
+                padding-top: 0 !important;
+                margin-bottom: 16px !important;
                 text-align: center !important;
+            }
+            .channels-strip {
+                flex-direction: column !important;
+                padding: 24px 20px !important;
+                text-align: center !important;
+                gap: 16px !important;
+            }
+            .channels-buttons {
+                width: 100% !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 10px !important;
+            }
+            .channel-pill-btn {
+                min-width: 0 !important;
+                padding: 10px !important;
+                font-size: 13px !important;
+                border-radius: 20px !important;
             }
             .location-note strong {
                 font-size: 0.82rem !important;
@@ -5070,13 +5116,15 @@
                     <a href="tel:+79770818050">+7 (977) 081-80-50</a>
                     <a href="mailto:zakharovdom.art@gmail.com">zakharovdom.art@gmail.com</a>
                 </div>
-                <div class="messengers">
-                    <a href="https://wa.me/79770818050" target="_blank">WhatsApp</a>
-                    <a href="https://max.ru/u/f9LHodD0cOKcHSBvVLlkdRssRtrFBUUOHNg3CJLTA7WfTSXtKFu27dJWAbg" target="_blank">Max</a>
-                </div>
                 <div class="location-note">
-                    <strong style="color: #1a1a1a; font-weight: 600;">Офис:</strong> Калининград, ул.&nbsp;Большая&nbsp;Окружная,&nbsp;12<br>
+                    <strong style="color: var(--color-text); font-weight: 600;">Офис:</strong> Калининград, ул.&nbsp;Большая&nbsp;Окружная,&nbsp;12<br>
                     <span class="meeting-badge">Встречи проводятся по предварительной договоренности</span>
+                </div>
+                <div class="messengers-title">Написать лично архитектору:</div>
+                <div class="messengers">
+                    <a href="https://t.me/zakharov_dom" target="_blank">Telegram</a>
+                    <a href="https://max.ru/u/f9LHodD0cOIwPQh9lHWyLiu978LTSX9mhb1HVmehly5JRlb8mnay3PjZYhE" target="_blank">Max</a>
+                    <a href="https://wa.me/79770818050" target="_blank">WhatsApp</a>
                 </div>
             </div>
             <div class="contact-form-wrapper">
@@ -5092,8 +5140,8 @@
                             <span class="chip-box">Встреча в офисе (Калининград)</span>
                         </label>
                         <label class="chip-label">
-                            <input type="radio" name="meeting_format" value="Онлайн (WhatsApp / Max / Видеосвязь)">
-                            <span class="chip-box">Онлайн (WhatsApp / Max / Видеосвязь)</span>
+                            <input type="radio" name="meeting_format" value="Онлайн (Telegram / Max / WhatsApp)">
+                            <span class="chip-box">Онлайн (Telegram / Max / WhatsApp)</span>
                         </label>
                     </div>
 
@@ -5186,6 +5234,31 @@
             </div>
         </div>
     </section>
+
+    <!-- ПОЛОСА АВТОРСКИХ КАНАЛОВ -->
+    <div class="channels-strip">
+        <div class="channels-meta">
+            <span class="channels-tag">Практика без глянца</span>
+            <div class="channels-title">Авторские каналы архитектора Олега Захарова</div>
+            <div class="channels-desc">Разборы реальных участков, топосъёмок, геологии и планировок в Калининградской области</div>
+        </div>
+        <div class="channels-buttons">
+            <!-- TELEGRAM: Значок + Канал -->
+            <a href="https://t.me/zakharov_dom" target="_blank" class="channel-pill-btn">
+                <svg viewBox="0 0 32 32">
+                    <circle cx="16" cy="16" r="16" fill="#24A1DE"/>
+                    <path d="M22.5 9.5L7.8 15.2C6.8 15.6 6.8 16.2 7.6 16.4L11.4 17.6L20.2 12C20.6 11.7 21 11.9 20.7 12.2L13.6 18.6V18.7L13.4 22C13.7 22 13.9 21.9 14.1 21.7L16.2 19.7L20.6 22.9C21.4 23.3 22 23.1 22.2 22.1L25.1 8.5C25.4 7.3 24.6 6.7 23.8 7.1L22.5 9.5Z" fill="white"/>
+                </svg>
+                <span>Канал</span>
+            </a>
+
+            <!-- MAX: Значок + Канал -->
+            <a href="https://max.ru/channel_zakharov_dom" target="_blank" class="channel-pill-btn">
+                <img src="max_symbol.png" alt="MAX">
+                <span>Канал</span>
+            </a>
+        </div>
+    </div>
     
     <footer>
         <p>© 2026 ОЛЕГ ЗАХАРОВ | АРХИТЕКТОР. Все права защищены.</p>
@@ -6432,9 +6505,33 @@
             'modal-8', 'modal-14', 'modal-5', 'modal-6', 
             'modal-9', 'modal-13'
         ];
+        
+        const PROJECT_SLUGS = {
+            'modal-10': 'villa-grin',
+            'modal-7': 'otkrytaya-galereya',
+            'modal-4': 'dialog-pokoleniy',
+            'modal-11': 'yuzhnyy-akcent',
+            'modal-1': 'edinyy-kontur',
+            'modal-3': 'dom-v-zapovednoy-zone',
+            'modal-12': 'dominanta',
+            'modal-2': 'zelenyy-gorizont',
+            'modal-8': 'integraciya',
+            'modal-14': 'svyaz-vremyon',
+            'modal-5': 'kaskad',
+            'modal-6': 'novaya-klassika',
+            'modal-9': 'semeynaya-usadba',
+            'modal-13': 'klubnye-apartamenty'
+        };
+        const SLUG_TO_ID = {};
+        for (const [id, slug] of Object.entries(PROJECT_SLUGS)) {
+            SLUG_TO_ID[slug] = id;
+            SLUG_TO_ID[id] = id;
+        }
+
         let currentModalId = null;
 
         function openModal(id) {
+            if (SLUG_TO_ID[id]) id = SLUG_TO_ID[id];
             try {
                 if (window.prioritizeProjectAssets) { window.prioritizeProjectAssets(id, true); }
                 const modalEl = document.getElementById(id);
@@ -6457,6 +6554,16 @@
                 el.style.display = 'block';
                 el.scrollTop = 0;
                 document.body.classList.add('modal-open');
+                
+                // Обновление адресной строки браузера без прыжка страницы
+                const slug = PROJECT_SLUGS[id] || id;
+                if (window.location.hash !== '#' + slug) {
+                    try {
+                        history.pushState({ modalId: id }, '', '#' + slug);
+                    } catch(e) {
+                        window.location.hash = slug;
+                    }
+                }
             }
         }
         
@@ -6468,6 +6575,15 @@
             }
             document.body.classList.remove('modal-open');
             currentModalId = null;
+            
+            // Возврат хэша в #portfolio
+            if (window.location.hash) {
+                try {
+                    history.pushState(null, '', window.location.pathname + '#portfolio');
+                } catch(e) {
+                    window.location.hash = 'portfolio';
+                }
+            }
         }
 
         function navigateModal(direction) {
@@ -6488,8 +6604,62 @@
             openModal(PROJECT_MODAL_LIST[nextIdx]);
         }
 
+        // КОПИРОВАНИЕ ПРЯМОЙ ССЫЛКИ НА ПРОЕКТ
+        function copyProjectLink(id, btnEl) {
+            const slug = PROJECT_SLUGS[id] || id;
+            const fullUrl = window.location.origin + window.location.pathname + '#' + slug;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(fullUrl).then(function() {
+                    showCopySuccess(btnEl);
+                }).catch(function() {
+                    fallbackCopy(fullUrl, btnEl);
+                });
+            } else {
+                fallbackCopy(fullUrl, btnEl);
+            }
+        }
+        function fallbackCopy(text, btnEl) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); showCopySuccess(btnEl); } catch(e) {}
+            document.body.removeChild(ta);
+        }
+        function showCopySuccess(btnEl) {
+            if (!btnEl) return;
+            const originalHTML = btnEl.innerHTML;
+            btnEl.innerHTML = '✓ Ссылка скопирована';
+            btnEl.classList.add('copied');
+            setTimeout(function() {
+                btnEl.innerHTML = originalHTML;
+                btnEl.classList.remove('copied');
+            }, 2200);
+        }
+
         function injectModalNavigation() {
-            document.querySelectorAll('.project-modal .project-case').forEach(function(caseEl) {
+            document.querySelectorAll('.project-modal').forEach(function(modal) {
+                const modalId = modal.id;
+                const caseEl = modal.querySelector('.project-case');
+                if (!caseEl) return;
+                
+                // 1. Кнопка "Поделиться проектом" в шапку кейса
+                const header = caseEl.querySelector('.project-header');
+                if (header && !header.querySelector('.project-share-bar')) {
+                    const shareBar = document.createElement('div');
+                    shareBar.className = 'project-share-bar';
+                    shareBar.innerHTML = `
+                        <button type="button" class="project-share-btn" onclick="copyProjectLink('${modalId}', this)" title="Скопировать прямую ссылку на этот проект">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                            <span>Скопировать ссылку на проект</span>
+                        </button>
+                    `;
+                    header.appendChild(shareBar);
+                }
+
+                // 2. Навигационная полоса снизу
                 if (!caseEl.querySelector('.project-modal-nav-bar')) {
                     const navBar = document.createElement('div');
                     navBar.className = 'project-modal-nav-bar';
@@ -6503,6 +6673,35 @@
             });
         }
         document.addEventListener('DOMContentLoaded', injectModalNavigation);
+
+        // ОТКРЫТИЕ ПРОЕКТА ПО ПРЯМОЙ ССЫЛКЕ ИЗ АДРЕСНОЙ СТРОКИ
+        function checkUrlHashModal() {
+            const rawHash = window.location.hash.replace('#', '').trim();
+            if (!rawHash) return;
+            const targetId = SLUG_TO_ID[rawHash];
+            if (targetId && document.getElementById(targetId)) {
+                setTimeout(function() {
+                    openModal(targetId);
+                }, 150);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', checkUrlHashModal);
+        window.addEventListener('popstate', function() {
+            const rawHash = window.location.hash.replace('#', '').trim();
+            const targetId = SLUG_TO_ID[rawHash];
+            if (targetId && document.getElementById(targetId)) {
+                if (currentModalId && currentModalId !== targetId) {
+                    const prevEl = document.getElementById(currentModalId);
+                    if (prevEl) prevEl.style.display = 'none';
+                }
+                openModal(targetId);
+            } else if (currentModalId) {
+                const el = document.getElementById(currentModalId);
+                if (el) el.style.display = 'none';
+                document.body.classList.remove('modal-open');
+                currentModalId = null;
+            }
+        });
         document.addEventListener('keydown', function(e) {
             if (!currentModalId) return;
             if (e.key === 'ArrowRight') navigateModal('next');
