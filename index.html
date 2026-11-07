@@ -42,42 +42,123 @@
     <meta name="twitter:description" content="Индивидуальное проектирование загородных домов в Калининграде. 20 лет опыта, АР и КР, авторский надзор.">
     <meta name="twitter:image" content="https://zakharov-dom.ru/og_image.jpg">
 
-    <!-- Микроразметка Schema.org (Яндекс и Google) -->
+    <!-- Микроразметка Schema.org для поисковых систем (Яндекс, Google) и нейросетей (SearchGPT, Яндекс Нейро, Perplexity) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "@id": "https://zakharov-dom.ru/#organization",
-      "name": "Архитектор Олег Захаров",
-      "alternateName": "Архитектурное проектирование Олега Захарова",
-      "description": "Индивидуальное проектирование частных загородных домов и коттеджей в Калининграде и области. 20 лет опыта, полные альбомы АР и КР, авторский надзор на стройплощадке.",
-      "url": "https://zakharov-dom.ru/",
-      "telephone": "+79770818050",
-      "email": "zakharovdom.art@gmail.com",
-      "priceRange": "100000 - 350000 RUB",
-      "image": "https://zakharov-dom.ru/og_image.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ул. Большая Окружная, 12",
-        "addressLocality": "Калининград",
-        "addressRegion": "Калининградская область",
-        "postalCode": "236000",
-        "addressCountry": "RU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 54.7104,
-        "longitude": 20.4522
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      },
-      "sameAs": [
-        "https://wa.me/79770818050",
-        "https://max.ru/u/f9LHodD0cOKcHSBvVLlkdRssRtrFBUUOHNg3CJLTA7WfTSXtKFu27dJWAbg"
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://zakharov-dom.ru/#organization",
+          "name": "Архитектор Олег Захаров",
+          "alternateName": [
+            "Архитектурное бюро Олега Захарова",
+            "Архитектурное проектирование Олега Захарова",
+            "Архитектор в Калининграде Олег Захаров"
+          ],
+          "description": "Индивидуальное проектирование частных загородных домов, авторских вилл и коттеджей в Калининграде и области. 20 лет опыта, полные альбомы АР и КР, точные строительные чертежи, посадка на рельеф, авторский надзор на стройплощадке.",
+          "url": "https://zakharov-dom.ru/",
+          "telephone": "+79770818050",
+          "email": "zakharovdom.art@gmail.com",
+          "priceRange": "100000 - 450000 RUB",
+          "image": "https://zakharov-dom.ru/og_image.jpg",
+          "founder": {
+            "@id": "https://zakharov-dom.ru/#architect"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Большая Окружная, 12",
+            "addressLocality": "Калининград",
+            "addressRegion": "Калининградская область",
+            "postalCode": "236000",
+            "addressCountry": "RU"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 54.7104,
+            "longitude": 20.4522
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          },
+          "areaServed": [
+            { "@type": "AdministrativeArea", "name": "Калининградская область" },
+            { "@type": "City", "name": "Калининград" },
+            { "@type": "City", "name": "Светлогорск" },
+            { "@type": "City", "name": "Зеленоградск" },
+            { "@type": "City", "name": "Пионерский" },
+            { "@type": "City", "name": "Янтарный" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Услуги индивидуального архитектурного проектирования",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Индивидуальный проект загородного дома под ключ (разделы АР + КР)"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Раздел АР: Архитектурные решения, планировки и 3D-визуализация"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Раздел КР: Конструктивные решения и рабочие чертежи для строительства"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Авторский надзор за строительством дома на объекте"
+                }
+              }
+            ]
+          },
+          "sameAs": [
+            "https://t.me/zakharov_dom",
+            "https://t.me/zakharov_project",
+            "https://max.ru/channel_zakharov_dom",
+            "https://max.ru/u/f9LHodD0cOIwPQh9lHWyLiu978LTSX9mhb1HVmehly5JRlb8mnay3PjZYhE",
+            "https://wa.me/79770818050"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://zakharov-dom.ru/#architect",
+          "name": "Олег Захаров",
+          "jobTitle": "Архитектор",
+          "worksFor": {
+            "@id": "https://zakharov-dom.ru/#organization"
+          },
+          "description": "Практикующий архитектор в Калининграде с 20-летним опытом частной практики. Автор подхода «Практика без глянца». Специализация: индивидуальное проектирование авторских загородных домов, вилл и коттеджей, разработка полных рабочих проектов (разделы АР и КР), посадка зданий на сложный рельеф, авторский надзор на стройплощадке.",
+          "knowsAbout": [
+            "Архитектурное проектирование частных домов",
+            "Индивидуальные проекты коттеджей и вилл",
+            "Архитектурные решения (раздел АР)",
+            "Конструктивные решения для строительства (раздел КР)",
+            "Посадка дома на участок и рельеф",
+            "Проектирование загородных домов в Калининграде и на побережье",
+            "Авторский надзор за строительством",
+            "Практика без глянца"
+          ],
+          "sameAs": [
+            "https://t.me/zakharov_project",
+            "https://t.me/zakharov_dom",
+            "https://max.ru/channel_zakharov_dom"
+          ]
+        }
       ]
     }
     </script>
