@@ -4483,7 +4483,7 @@
                 
                 <!-- ЛИЧНО АРХИТЕКТОРУ: ЧИСТЫЙ ТЕКСТ БЕЗ РАМОК И ПЛАШЕК -->
                 <div class="personal-direct-line">
-                    <a href="https://t.me/zakharov_project" target="_blank" class="personal-text-link" onclick="closeMobileNav()">Telegram</a>
+                    <a href="tg://resolve?domain=zakharov_project" class="personal-text-link" onclick="closeMobileNav()">Telegram</a>
                     <span class="personal-sep">•</span>
                     <a href="https://max.ru/u/f9LHodD0cOIwPQh9lHWyLiu978LTSX9mhb1HVmehly5JRlb8mnay3PjZYhE" target="_blank" class="personal-text-link" onclick="closeMobileNav()">Max</a>
                     <span class="personal-sep">•</span>
@@ -4493,7 +4493,7 @@
                 <!-- АВТОРСКИЕ КАНАЛЫ: ТОЛЬКО ОНИ В АКЦЕНТНЫХ ПЛАШКАХ -->
                 <div class="mobile-channels-label">Авторские каналы:</div>
                 <div class="mobile-menu-channels-row">
-                    <a href="https://t.me/zakharov_dom" target="_blank" class="mobile-menu-channel-pill" onclick="closeMobileNav()">
+                    <a href="tg://resolve?domain=zakharov_dom" class="mobile-menu-channel-pill" onclick="closeMobileNav()">
                         <svg viewBox="0 0 32 32" style="width: 15px; height: 15px;">
                             <circle cx="16" cy="16" r="16" fill="#24A1DE"/>
                             <path d="M22.5 9.5L7.8 15.2C6.8 15.6 6.8 16.2 7.6 16.4L11.4 17.6L20.2 12C20.6 11.7 21 11.9 20.7 12.2L13.6 18.6V18.7L13.4 22C13.7 22 13.9 21.9 14.1 21.7L16.2 19.7L20.6 22.9C21.4 23.3 22 23.1 22.2 22.1L25.1 8.5C25.4 7.3 24.6 6.7 23.8 7.1L22.5 9.5Z" fill="white"/>
@@ -6256,6 +6256,50 @@
             if (toggle) toggle.classList.remove('open');
             document.body.style.overflow = '';
         }
+
+        // ========================================================
+        // УМНАЯ МАРШРУТИЗАЦИЯ TELEGRAM (SMART HYBRID ROUTING)
+        // На смартфонах: мгновенный запуск приложения tg:// (без задержек t.me в РФ)
+        // На компьютерах: классический веб-переход https://t.me/ в новой вкладке
+        // ========================================================
+        (function initSmartTelegramRouting() {
+            function isMobileUser() {
+                return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent) || 
+                       (window.matchMedia && window.matchMedia('(max-width: 992px)').matches && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
+            }
+
+            function setupMobileTgLinks() {
+                if (!isMobileUser()) return;
+                document.querySelectorAll('a[href*="t.me/"]').forEach(function(link) {
+                    var href = link.getAttribute('href') || '';
+                    var match = href.match(/t\.me\/([a-zA-Z0-9_]+)/);
+                    if (match && match[1]) {
+                        link.setAttribute('href', 'tg://resolve?domain=' + match[1]);
+                        link.removeAttribute('target');
+                    }
+                });
+            }
+
+            // Перехват клика для мгновенного перехода в приложение без ожидания
+            document.addEventListener('click', function(e) {
+                var link = e.target.closest('a');
+                if (!link) return;
+                var href = link.getAttribute('href') || '';
+                if (isMobileUser() && href.indexOf('t.me/') !== -1) {
+                    var match = href.match(/t\.me\/([a-zA-Z0-9_]+)/);
+                    if (match && match[1]) {
+                        e.preventDefault();
+                        window.location.href = 'tg://resolve?domain=' + match[1];
+                    }
+                }
+            }, { capture: true });
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setupMobileTgLinks);
+            } else {
+                setupMobileTgLinks();
+            }
+        })();
 
         // ПЕРЕКЛЮЧЕНИЕ ПАРЯЩЕЙ ШАПКИ ПРИ СКРОЛЛЕ (ВАРИАНТ 2)
         function initFixedHeaderScroll() {
