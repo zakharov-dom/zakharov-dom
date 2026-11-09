@@ -4493,7 +4493,7 @@
 </head>
 <body>
     <header id="mainHeader">
-        <a href="#" class="logo-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" title="Вернуться на главную">
+        <a href="/" class="logo-link" onclick="return goToHome(event);" title="Вернуться на главную">
             <img src="Oleg_Zakharov_Logo_White.png" alt="Олег Захаров - Архитектор" class="logo-img-white">
             <img src="Oleg_Zakharov_Logo_Black_Clean.png" alt="Олег Захаров - Архитектор" class="logo-img-black">
         </a>
@@ -4516,7 +4516,7 @@
     <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="if(event.target === this) closeMobileNav();" aria-hidden="true">
         <div class="mobile-menu-card">
             <div class="mobile-menu-header">
-                <a href="#" class="mobile-menu-logo" onclick="closeMobileNav(); window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                <a href="/" class="mobile-menu-logo" onclick="closeMobileNav(); return goToHome(event);">
                     <img src="Oleg_Zakharov_Logo_Black_Clean.png" alt="Олег Захаров - Архитектурное бюро">
                 </a>
                 <button class="mobile-menu-close-btn" onclick="closeMobileNav()" aria-label="Закрыть меню">
@@ -6722,6 +6722,18 @@
 
         let currentModalId = null;
 
+                function goToHome(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            if (typeof closeModal === 'function') closeModal();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.location.hash) {
+                try {
+                    history.pushState(null, '', window.location.pathname);
+                } catch(err) {}
+            }
+            return false;
+        }
+
         function openModal(id) {
             if (SLUG_TO_ID[id]) id = SLUG_TO_ID[id];
             try {
@@ -6771,9 +6783,9 @@
             // Возврат хэша в #portfolio
             if (window.location.hash) {
                 try {
-                    history.pushState(null, '', window.location.pathname + '#portfolio');
+                    history.pushState(null, '', window.location.pathname);
                 } catch(e) {
-                    window.location.hash = 'portfolio';
+                    // no hash
                 }
             }
         }
