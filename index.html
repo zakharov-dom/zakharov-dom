@@ -1012,11 +1012,7 @@
         .channel-pill-btn:hover { border-color: var(--color-accent-hover); background: #faf8f5; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(185, 168, 145, 0.2); }
         .channel-pill-btn svg, .channel-pill-btn img { width: 18px; height: 18px; display: block; }
 
-        /* ПРЯМАЯ ССЫЛКА НА ПРОЕКТ */
-        .project-share-bar { margin-top: 14px; display: flex; align-items: center; }
-        .project-share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; font-size: 0.8rem; color: var(--color-text-muted); background: rgba(185, 168, 145, 0.08); border: 1px solid var(--color-border); border-radius: 20px; cursor: pointer; transition: all 0.25s ease; font-family: 'Inter', sans-serif; font-weight: 500; }
-        .project-share-btn:hover { background: #ffffff; border-color: var(--color-accent); color: var(--color-text); transform: translateY(-1px); }
-        .project-share-btn.copied { background: #ECFDF5; border-color: #10B981; color: #059669; }
+        
 
         .contact-form-wrapper { flex: 1; background: #fff; padding: 50px; border-radius: 4px; box-shadow: var(--shadow-card); border: 1px solid var(--color-border-subtle); }
         .contact-form-wrapper h4 { margin: 0 0 30px 0; font-size: 1.4rem; font-weight: 400; color: var(--color-text); }
@@ -6800,40 +6796,7 @@
             openModal(PROJECT_MODAL_LIST[nextIdx]);
         }
 
-        // КОПИРОВАНИЕ ПРЯМОЙ ССЫЛКИ НА ПРОЕКТ
-        function copyProjectLink(id, btnEl) {
-            const slug = PROJECT_SLUGS[id] || id;
-            const fullUrl = window.location.origin + window.location.pathname + '#' + slug;
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(fullUrl).then(function() {
-                    showCopySuccess(btnEl);
-                }).catch(function() {
-                    fallbackCopy(fullUrl, btnEl);
-                });
-            } else {
-                fallbackCopy(fullUrl, btnEl);
-            }
-        }
-        function fallbackCopy(text, btnEl) {
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            ta.style.position = 'fixed';
-            ta.style.opacity = '0';
-            document.body.appendChild(ta);
-            ta.select();
-            try { document.execCommand('copy'); showCopySuccess(btnEl); } catch(e) {}
-            document.body.removeChild(ta);
-        }
-        function showCopySuccess(btnEl) {
-            if (!btnEl) return;
-            const originalHTML = btnEl.innerHTML;
-            btnEl.innerHTML = '✓ Ссылка скопирована';
-            btnEl.classList.add('copied');
-            setTimeout(function() {
-                btnEl.innerHTML = originalHTML;
-                btnEl.classList.remove('copied');
-            }, 2200);
-        }
+        
 
         function injectModalNavigation() {
             document.querySelectorAll('.project-modal').forEach(function(modal) {
@@ -6841,19 +6804,7 @@
                 const caseEl = modal.querySelector('.project-case');
                 if (!caseEl) return;
                 
-                // 1. Кнопка "Поделиться проектом" в шапку кейса
-                const header = caseEl.querySelector('.project-header');
-                if (header && !header.querySelector('.project-share-bar')) {
-                    const shareBar = document.createElement('div');
-                    shareBar.className = 'project-share-bar';
-                    shareBar.innerHTML = `
-                        <button type="button" class="project-share-btn" onclick="copyProjectLink('${modalId}', this)" title="Скопировать прямую ссылку на этот проект">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                            <span>Скопировать ссылку на проект</span>
-                        </button>
-                    `;
-                    header.appendChild(shareBar);
-                }
+                
 
                 // 2. Навигационная полоса снизу
                 if (!caseEl.querySelector('.project-modal-nav-bar')) {
